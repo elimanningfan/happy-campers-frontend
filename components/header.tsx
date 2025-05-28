@@ -11,7 +11,7 @@ import { useState } from "react";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Browse RVs", href: "/rvs" },
-  { name: "About", href: "/about" },
+  { name: "Get a Quote", href: "/inquiry" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -74,7 +74,7 @@ export function Header() {
         
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
           <Link href="/inquiry" passHref>
-            <Button>Get a Quote</Button>
+            <Button>Get Started</Button>
           </Link>
           <Link href="/admin" passHref>
             <Button variant="outline">Admin</Button>
@@ -105,7 +105,7 @@ export function Header() {
             className="block rounded-md bg-primary px-3 py-2 text-center text-base font-medium text-white"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Get a Quote
+            Get Started
           </Link>
           <Link
             href="/admin"
