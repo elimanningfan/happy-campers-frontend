@@ -5,70 +5,73 @@
 @layer base {
   :root {
     /* Happy Campers Brand Colors */
-    --hc-primary-green: 43 95 63; /* #2B5F3F */
-    --hc-orange: 242 101 34; /* #F26522 */
-    --hc-brown: 139 111 71; /* #8B6F47 */
+    --hc-primary-orange: 230 95 43; /* #E65F2B */
+    --hc-forest-green: 44 95 65; /* #2C5F41 */
+    --hc-earth-brown: 139 69 19; /* #8B4513 */
+    --hc-cream: 250 248 245; /* #FAF8F5 */
+    --hc-white: 255 255 255; /* #FFFFFF */
+    --hc-dark-gray: 51 51 51; /* #333333 */
     
-    /* Default shadcn/ui variables */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Default shadcn/ui variables mapped to Happy Campers colors */
+    --background: 250 248 245; /* Cream background */
+    --foreground: 51 51 51; /* Dark gray text */
     
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 255 255 255; /* White cards */
+    --card-foreground: 51 51 51; /* Dark gray text */
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 255 255 255;
+    --popover-foreground: 51 51 51;
     
-    --primary: 142 50% 32%; /* Using HC green */
-    --primary-foreground: 0 0% 100%;
+    --primary: 230 95 43; /* Orange for primary actions */
+    --primary-foreground: 255 255 255;
     
-    --secondary: 24 89% 54%; /* Using HC orange */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 44 95 65; /* Forest green for secondary */
+    --secondary-foreground: 255 255 255;
     
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 250 248 245;
+    --muted-foreground: 100 100 100;
     
-    --accent: 33 39% 51%; /* Using HC brown */
-    --accent-foreground: 0 0% 100%;
+    --accent: 139 69 19; /* Earth brown for accents */
+    --accent-foreground: 255 255 255;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142 50% 32%;
+    --ring: 230 95 43; /* Orange ring */
     
     --radius: 0.5rem;
   }
   
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 51 51 51; /* Dark mode with dark gray */
+    --foreground: 250 248 245; /* Cream text in dark mode */
     
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 60 60 60;
+    --card-foreground: 250 248 245;
     
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 60 60 60;
+    --popover-foreground: 250 248 245;
     
-    --primary: 142 50% 40%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 230 95 43; /* Same orange in dark mode */
+    --primary-foreground: 51 51 51;
     
-    --secondary: 24 89% 60%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 152 47 25; /* Slightly brighter green in dark mode */
+    --secondary-foreground: 51 51 51;
     
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 80 80 80;
+    --muted-foreground: 180 180 180;
     
-    --accent: 33 39% 60%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 30 69 25; /* Slightly brighter brown in dark mode */
+    --accent-foreground: 250 248 245;
     
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 142 50% 40%;
+    --ring: 230 95 43;
   }
 }
 
@@ -130,28 +133,32 @@
 
 /* Custom Happy Campers styles */
 @layer utilities {
-  .hc-primary-green {
-    @apply bg-[rgb(var(--hc-primary-green))];
+  .hc-primary-orange {
+    @apply bg-[rgb(var(--hc-primary-orange))];
   }
   
-  .hc-orange {
-    @apply bg-[rgb(var(--hc-orange))];
+  .hc-forest-green {
+    @apply bg-[rgb(var(--hc-forest-green))];
   }
   
-  .hc-brown {
-    @apply bg-[rgb(var(--hc-brown))];
+  .hc-earth-brown {
+    @apply bg-[rgb(var(--hc-earth-brown))];
   }
   
-  .text-hc-primary-green {
-    @apply text-[rgb(var(--hc-primary-green))];
+  .hc-cream {
+    @apply bg-[rgb(var(--hc-cream))];
   }
   
-  .text-hc-orange {
-    @apply text-[rgb(var(--hc-orange))];
+  .text-hc-primary-orange {
+    @apply text-[rgb(var(--hc-primary-orange))];
   }
   
-  .text-hc-brown {
-    @apply text-[rgb(var(--hc-brown))];
+  .text-hc-forest-green {
+    @apply text-[rgb(var(--hc-forest-green))];
+  }
+  
+  .text-hc-earth-brown {
+    @apply text-[rgb(var(--hc-earth-brown))];
   }
 }
 

@@ -168,6 +168,18 @@ No environment variables are required for the current prototype.
 
 ## Version History
 
+### v0.4.4 - Brand Color Palette Implementation
+- Implemented Happy Campers brand color palette:
+  - Primary Orange (#E65F2B) for buttons, links, and highlights
+  - Forest Green (#2C5F41) for headers and navigation
+  - Earth Brown (#8B4513) for accent elements
+  - Cream (#FAF8F5) for backgrounds
+  - White (#FFFFFF) for card backgrounds
+  - Dark Gray (#333333) for text
+- Updated all CSS variables to use the new color scheme
+- Applied colors throughout the application for consistent branding
+- Added dark mode support with adjusted color values
+
 ### v0.4.3 - Custom Typography System (Nov 28, 2024)
 - Implemented custom font system using Google Fonts:
   - **Montserrat** for all headings and hero text
