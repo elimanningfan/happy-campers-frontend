@@ -15,15 +15,22 @@ export default function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-green-50 to-white">
-        <div className="absolute inset-0 bg-[url('/images/HC_Homepage_Hero.jpg')] bg-cover bg-center opacity-10" />
+      <section className="relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1600&q=80')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-              <span className="block">Your Adventure</span>
-              <span className="block text-primary">Starts Here</span>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+              <span className="block">Adventure Awaits</span>
+              <span className="block text-secondary">Your Journey Starts Here</span>
             </h1>
-            <p className="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
+            <p className="mx-auto mt-3 max-w-md text-base text-gray-100 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
               Experience the freedom of the open road with Happy Campers RV Rentals. 
               Premium RVs for unforgettable Pacific Northwest adventures.
             </p>
@@ -87,6 +94,7 @@ export default function Home() {
                     src={rv.images[0]}
                     alt={rv.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
                   />
                   <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">

@@ -77,8 +77,9 @@ export default function RVDetail() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
                 <Image
                   src={rv.images[currentImageIndex] || "/images/placeholder.svg"}
-                  alt={`${rv.name} - Image ${currentImageIndex + 1}`}
+                  alt={rv.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 {rv.images.length > 1 && (
@@ -117,6 +118,7 @@ export default function RVDetail() {
                         src={image || "/images/placeholder.svg"}
                         alt={`${rv.name} - Thumbnail ${index + 1}`}
                         fill
+                        sizes="(max-width: 768px) 25vw, 12.5vw"
                         className="object-cover"
                       />
                     </button>

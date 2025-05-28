@@ -185,6 +185,7 @@ export default function BrowseRVs() {
                           src={rv.images[0] || "/images/placeholder.svg"}
                           alt={rv.name}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="object-cover"
                         />
                         <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">

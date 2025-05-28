@@ -12,10 +12,11 @@ export function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <div className="relative h-10 w-10">
                 <Image
-                  src="/images/HC_Logo.png"
+                  src="/images/HC_Logo.svg"
                   alt="Happy Campers"
                   fill
-                  className="object-contain brightness-0 invert"
+                  sizes="40px"
+                  className="object-contain"
                 />
               </div>
               <span className="text-xl font-bold">Happy Campers</span>
@@ -117,7 +118,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-gray-800 pt-8">
           <p className="text-center text-sm text-gray-400">
-            © {new Date().getFullYear()} Happy Campers RV Rentals. All rights reserved.
+            {new Date().getFullYear()} Happy Campers RV Rentals. All rights reserved.
           </p>
         </div>
       </div>

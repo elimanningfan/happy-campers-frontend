@@ -28,9 +28,10 @@ export function Header() {
             <div className="flex items-center space-x-2">
               <div className="relative h-12 w-12">
                 <Image
-                  src="/images/HC_Logo.png"
+                  src="/images/HC_Logo.svg"
                   alt="Happy Campers"
                   fill
+                  sizes="48px"
                   className="object-contain"
                   priority
                 />
