@@ -168,6 +168,23 @@ No environment variables are required for the current prototype.
 
 ## Version History
 
+### v0.4.0 - Enhanced RV Fleet Page (2025-05-28)
+- 🚀 **Enhanced RV Fleet Page**
+  - Added advanced search functionality with real-time filtering
+  - Implemented price range slider (0-$500/day)
+  - Added view mode toggle (Grid/List views)
+  - Enhanced filtering system with:
+    - RV Type with descriptions
+    - Sleeping capacity options
+    - Feature-based filtering (Pet-friendly, WiFi, Solar, Generator)
+    - Price range filtering
+  - Added sorting options (Price, Size, Newest, Popular)
+  - Improved UI with hero section and search bar
+  - Added featured badge for premium RVs
+  - Enhanced mobile responsiveness
+  - Quick availability check buttons
+  - Year display for each RV
+
 ### Version 2.3.0 - December 28, 2024
 - Added category management interface with CRUD operations
 - Implemented tag management with bulk add functionality

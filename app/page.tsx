@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Users, Calendar, ArrowRight } from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
   const featuredRVs = getFeaturedRVs();
 
   return (
@@ -213,6 +213,7 @@ export default function Home() {
               </Button>
             </Link>
           </div>
+          <p className="mt-4 text-sm opacity-75">v0.4.0</p>
         </div>
       </section>
 
