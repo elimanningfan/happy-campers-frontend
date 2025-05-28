@@ -32,6 +32,36 @@ const availableFeatures = [
   { id: "tow-hitch", label: "Tow Hitch", category: "towing" },
 ];
 
+// Helper function to extract feature IDs from RV features object
+const extractFeatureIds = (rvFeatures: any): string[] => {
+  if (!rvFeatures || typeof rvFeatures !== 'object') return [];
+  
+  const featureIds: string[] = [];
+  
+  // Map RV feature strings to our feature IDs
+  Object.values(rvFeatures).forEach((categoryFeatures: any) => {
+    if (Array.isArray(categoryFeatures)) {
+      categoryFeatures.forEach((feature: string) => {
+        const lowerFeature = feature.toLowerCase();
+        if (lowerFeature.includes('pet')) featureIds.push('pet-friendly');
+        if (lowerFeature.includes('wifi') || lowerFeature.includes('wi-fi')) featureIds.push('wifi');
+        if (lowerFeature.includes('solar')) featureIds.push('solar');
+        if (lowerFeature.includes('generator')) featureIds.push('generator');
+        if (lowerFeature.includes('awning')) featureIds.push('awning');
+        if (lowerFeature.includes('backup camera')) featureIds.push('backup-camera');
+        if (lowerFeature.includes('leveling')) featureIds.push('leveling-jacks');
+        if (lowerFeature.includes('slide') || lowerFeature.includes('slideout')) featureIds.push('slideouts');
+        if (lowerFeature.includes('outdoor kitchen')) featureIds.push('outdoor-kitchen');
+        if (lowerFeature.includes('outdoor entertainment')) featureIds.push('outdoor-entertainment');
+        if (lowerFeature.includes('bike rack')) featureIds.push('bike-rack');
+        if (lowerFeature.includes('tow') || lowerFeature.includes('hitch')) featureIds.push('tow-hitch');
+      });
+    }
+  });
+  
+  return [...new Set(featureIds)]; // Remove duplicates
+};
+
 export default function EditRVPage() {
   const params = useParams();
   const router = useRouter();
@@ -73,7 +103,7 @@ export default function EditRVPage() {
     minimumRentalDays: 2,
     
     // Features
-    features: initialRV?.features || [],
+    features: initialRV?.features || {},
     
     // Images
     images: initialRV?.images || [],
@@ -94,7 +124,7 @@ export default function EditRVPage() {
   });
 
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>(
-    initialRV?.features || []
+    extractFeatureIds(initialRV?.features)
   );
 
   const handleInputChange = (field: string, value: any) => {

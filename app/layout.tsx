@@ -1,8 +1,33 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat, Lato, Roboto, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// Font configurations
+const montserrat = Montserrat({ 
+  subsets: ["latin"],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
+
+const lato = Lato({ 
+  weight: ['300', '400', '700'],
+  subsets: ["latin"],
+  variable: '--font-lato',
+  display: 'swap',
+});
+
+const roboto = Roboto({ 
+  weight: ['300', '400', '500', '700'],
+  subsets: ["latin"],
+  variable: '--font-roboto',
+  display: 'swap',
+});
+
+const openSans = Open_Sans({ 
+  subsets: ["latin"],
+  variable: '--font-open-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Happy Campers RV Rentals - Your Adventure Starts Here",
@@ -34,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${montserrat.variable} ${lato.variable} ${roboto.variable} ${openSans.variable} font-body`}>{children}</body>
     </html>
   );
 }

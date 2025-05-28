@@ -16,6 +16,12 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        'heading': ['var(--font-montserrat)', 'sans-serif'],
+        'body': ['var(--font-lato)', 'sans-serif'],
+        'ui': ['var(--font-roboto)', 'sans-serif'],
+        'primary': ['var(--font-open-sans)', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
