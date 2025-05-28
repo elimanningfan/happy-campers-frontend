@@ -213,7 +213,7 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-          <p className="mt-4 text-sm opacity-75">v0.4.1</p>
+          <p className="mt-4 text-sm opacity-75">v0.4.2</p>
         </div>
       </section>
 

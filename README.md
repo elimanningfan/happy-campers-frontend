@@ -168,21 +168,20 @@ No environment variables are required for the current prototype.
 
 ## Version History
 
-### v0.4.0 - Enhanced RV Fleet Page (2025-05-28)
-- **Enhanced RV Fleet Page**: Implemented advanced filtering, sorting, and search functionality with:
-  - Real-time search by make, model, type, or description
-  - Price range slider for filtering ($0-$500/day)
-  - View mode toggle (Grid/List views)
-  - RV type filter with descriptions
-  - Sleeping capacity options
-  - Feature-based filtering (Pet-friendly, WiFi, Solar, Generator)
-  - Sorting options (Price, Size, Newest, Popular)
-  - Featured badges for premium RVs
-  - Quick availability check buttons
-  - Enhanced mobile responsiveness
-- **New UI Components**: Created slider and checkbox components for enhanced filtering
+### v0.4.2 - December 28, 2024
+- Added RV Edit Page with comprehensive editing capabilities
+  - Multi-tab interface for organized content management
+  - Basic info editing (name, type, make, model, year)
+  - Specifications management (sleeps, length, fuel type, features)
+  - Advanced pricing configuration with discounts and fees
+  - Image gallery management with primary image selection
+  - SEO settings (slug, meta title/description)
+  - Insurance requirements configuration
+  - Status and availability controls
+  - Real-time form validation and auto-save functionality
 
-### v0.4.1 - 2025-05-28
+### v0.4.1 - December 28, 2024
+- Added comprehensive Admin Fleet Management System
 - **Admin Fleet Management Dashboard**: Created comprehensive fleet management system at `/admin/fleet` with:
   - Dashboard overview with key metrics (Total RVs, Available, Revenue, Bookings)
   - Fleet status overview with visual indicators

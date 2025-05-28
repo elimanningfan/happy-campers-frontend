@@ -46,6 +46,14 @@ happy-campers-frontend/
 │           │           └── page.tsx
 │           ├── categories/ # Category management (planned)
 │           └── tags/       # Tag management (planned)
+│       ├── fleet/              # Fleet management section
+│       │   ├── page.tsx        # Fleet dashboard overview
+│       │   └── rvs/           # RV management
+│       │       ├── page.tsx    # RV listing/management
+│       │       └── [id]/       # Dynamic RV routes
+│       │           └── edit/   # RV edit functionality
+│       │               └── page.tsx # RV edit form
+│       └── layout.tsx          # Admin layout with sidebar
 ├── components/             # Reusable components
 │   ├── ui/                # shadcn/ui components
 │   │   ├── button.tsx
@@ -55,7 +63,11 @@ happy-campers-frontend/
 │   │   ├── badge.tsx
 │   │   ├── separator.tsx
 │   │   ├── table.tsx
-│   │   └── select.tsx
+│   │   ├── select.tsx
+│   │   ├── checkbox.tsx            # Checkbox component with custom styling
+│   │   ├── dropdown-menu.tsx       # Dropdown menu component for actions
+│   │   ├── tabs.tsx                # Tabs component for multi-section forms
+│   │   └── textarea.tsx            # Textarea component for long text input
 │   ├── blog/              # Blog-specific components
 │   │   └── editor.tsx     # Tiptap rich text editor
 │   ├── header.tsx         # Site header
