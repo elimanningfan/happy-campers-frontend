@@ -5,9 +5,10 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { rvData } from "@/lib/rv-data";
-import { Calendar, Users, DollarSign, TrendingUp, Eye, Edit, MessageSquare, Settings } from "lucide-react";
+import { Calendar, Users, Car, DollarSign, TrendingUp, Activity, Clock, Mail, FileText, BarChart3, Eye, Edit } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { rvData } from "@/lib/rv-data";
 
 // Mock data for demo
 const mockInquiries = [
@@ -42,16 +43,66 @@ const mockInquiries = [
 
 const tabs = ["Dashboard", "Inquiries", "RVs", "Settings"];
 
+const statsCards = [
+  {
+    title: 'Total Revenue',
+    value: '$42,500',
+    change: '+12.5%',
+    trend: 'up',
+    icon: DollarSign,
+    color: 'text-green-600',
+    bgColor: 'bg-green-50',
+  },
+  {
+    title: 'Active Bookings',
+    value: '12',
+    change: '+4',
+    trend: 'up',
+    icon: Calendar,
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-50',
+  },
+  {
+    title: 'Available RVs',
+    value: '8',
+    change: '-2',
+    trend: 'down',
+    icon: Car,
+    color: 'text-orange-600',
+    bgColor: 'bg-orange-50',
+  },
+  {
+    title: 'New Customers',
+    value: '18',
+    change: '+25%',
+    trend: 'up',
+    icon: Users,
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-50',
+  },
+  {
+    title: 'Blog Posts',
+    value: '24',
+    change: '+3',
+    trend: 'up',
+    icon: FileText,
+    color: 'text-indigo-600',
+    bgColor: 'bg-indigo-50',
+  },
+  {
+    title: 'Blog Views',
+    value: '12.5K',
+    change: '+18%',
+    trend: 'up',
+    icon: BarChart3,
+    color: 'text-pink-600',
+    bgColor: 'bg-pink-50',
+  },
+];
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("Dashboard");
   const [selectedInquiry, setSelectedInquiry] = useState<string | null>(null);
-
-  const stats = {
-    totalInquiries: mockInquiries.length,
-    newInquiries: mockInquiries.filter(i => i.status === "new").length,
-    totalRVs: rvData.length,
-    avgOccupancy: "78%",
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -98,54 +149,56 @@ export default function AdminDashboard() {
             <div className="space-y-6">
               {/* Stats Grid */}
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-medium text-gray-600">Total Inquiries</p>
-                        <p className="text-2xl font-bold text-gray-900">{stats.totalInquiries}</p>
+                {statsCards.map((stat) => (
+                  <Card key={stat.title}>
+                    <CardContent className="pt-6">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-gray-600">{stat.title}</p>
+                          <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                        </div>
+                        <stat.icon className={`h-8 w-8 ${stat.color} opacity-20`} />
                       </div>
-                      <MessageSquare className="h-8 w-8 text-primary opacity-20" />
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-medium text-gray-600">New Inquiries</p>
-                        <p className="text-2xl font-bold text-orange-600">{stats.newInquiries}</p>
-                      </div>
-                      <Users className="h-8 w-8 text-orange-600 opacity-20" />
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-medium text-gray-600">Total RVs</p>
-                        <p className="text-2xl font-bold text-gray-900">{stats.totalRVs}</p>
-                      </div>
-                      <TrendingUp className="h-8 w-8 text-primary opacity-20" />
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="pt-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-medium text-gray-600">Avg Occupancy</p>
-                        <p className="text-2xl font-bold text-gray-900">{stats.avgOccupancy}</p>
-                      </div>
-                      <Calendar className="h-8 w-8 text-primary opacity-20" />
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
+
+              {/* Quick Actions */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Quick Actions</CardTitle>
+                  <CardDescription>Common tasks and shortcuts</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-4">
+                    <Link href="/admin/inquiries">
+                      <Button variant="outline" className="w-full justify-start">
+                        <Mail className="h-4 w-4 mr-2" />
+                        View Inquiries
+                      </Button>
+                    </Link>
+                    <Link href="/admin/fleet/add">
+                      <Button variant="outline" className="w-full justify-start">
+                        <Car className="h-4 w-4 mr-2" />
+                        Add New RV
+                      </Button>
+                    </Link>
+                    <Link href="/admin/blog/posts/new">
+                      <Button variant="outline" className="w-full justify-start">
+                        <FileText className="h-4 w-4 mr-2" />
+                        Write Blog Post
+                      </Button>
+                    </Link>
+                    <Link href="/admin/blog">
+                      <Button variant="outline" className="w-full justify-start">
+                        <BarChart3 className="h-4 w-4 mr-2" />
+                        Blog Dashboard
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* Recent Inquiries */}
               <Card>
@@ -331,12 +384,12 @@ export default function AdminDashboard() {
                     <p className="text-sm text-gray-600">Set your availability for customer inquiries</p>
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="openTime">Opening Time</Label>
-                        <Input id="openTime" type="time" defaultValue="09:00" />
+                        <label htmlFor="openTime">Opening Time</label>
+                        <input id="openTime" type="time" defaultValue="09:00" />
                       </div>
                       <div>
-                        <Label htmlFor="closeTime">Closing Time</Label>
-                        <Input id="closeTime" type="time" defaultValue="18:00" />
+                        <label htmlFor="closeTime">Closing Time</label>
+                        <input id="closeTime" type="time" defaultValue="18:00" />
                       </div>
                     </div>
                   </div>
