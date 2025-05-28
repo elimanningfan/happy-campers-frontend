@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Happy Campers RV Rental Platform - Frontend Prototype
+
+A modern, responsive frontend prototype for Happy Campers RV Rental Platform built with Next.js 14, TypeScript, and Tailwind CSS.
+
+## Features Implemented
+
+### Core Components
+- **Reusable UI Components**: Button, Card components using shadcn/ui
+- **Header Component**: Responsive navigation with mobile menu support
+- **Footer Component**: Company info, quick links, and contact details
+
+### Pages
+- **Homepage**: 
+  - Hero section with call-to-action
+  - Featured RVs showcase
+  - Company statistics
+  - Why Choose Us section
+  
+- **RV Browse Page** (`/rvs`):
+  - Grid layout with RV cards
+  - Filtering by RV type, sleeping capacity, and price range
+  - Mobile-responsive filter sidebar
+  - Real-time filter updates
+  
+- **RV Detail Pages** (`/rvs/[slug]`):
+  - Image gallery with navigation
+  - Detailed specifications
+  - Features categorized by type
+  - Highlights and ideal usage scenarios
+  - Call-to-action buttons for inquiries
+
+### Data Integration
+- **Real RV Data**: 10 RVs from happycampersrvrentals.com with accurate details
+- **TypeScript Support**: Fully typed interfaces for RV data
+- **Helper Functions**: Filtering, searching, and data retrieval utilities
+
+## Tech Stack
+
+- **Framework**: [Next.js 14+](https://nextjs.org/) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+happy-campers-frontend/
+├── app/                    # Next.js app directory
+│   ├── page.tsx           # Homepage
+│   ├── layout.tsx         # Root layout
+│   ├── globals.css        # Global styles
+│   └── rvs/               # RV-related pages
+│       ├── page.tsx       # RV browse page
+│       └── [slug]/        # Dynamic RV detail pages
+│           └── page.tsx
+├── components/            # React components
+│   ├── ui/               # shadcn/ui components
+│   ├── header.tsx        # Site header
+│   └── footer.tsx        # Site footer
+├── lib/                  # Utilities and data
+│   ├── rv-data.ts       # RV data and helper functions
+│   └── utils.ts         # Utility functions
+└── public/              # Static assets
+    └── images/          # Image files
+```
 
-## Learn More
+## Next Steps
 
-To learn more about Next.js, take a look at the following resources:
+1. **Multi-step Inquiry Form**: Implement the rental inquiry process
+2. **Admin Dashboard**: Create mockup for RV and inquiry management
+3. **Contact Page**: Add contact information and form
+4. **Search Functionality**: Implement RV search feature
+5. **Booking Calendar**: Add availability checking
+6. **Deployment**: Configure for Netlify/Vercel deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is ready to be deployed to Netlify or Vercel. Simply connect your GitHub repository to either platform and it will automatically build and deploy.
 
-## Deploy on Vercel
+### Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+No environment variables are required for the current prototype.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Version History
+
+- **v0.1.0** - Initial prototype with homepage, RV browsing, and detail pages

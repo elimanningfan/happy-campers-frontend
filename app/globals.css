@@ -1,26 +1,119 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Happy Campers Brand Colors */
+    --hc-primary-green: 43 95 63; /* #2B5F3F */
+    --hc-orange: 242 101 34; /* #F26522 */
+    --hc-brown: 139 111 71; /* #8B6F47 */
+    
+    /* Default shadcn/ui variables */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    
+    --primary: 142 50% 32%; /* Using HC green */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 24 89% 54%; /* Using HC orange */
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --accent: 33 39% 51%; /* Using HC brown */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 50% 32%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 142 50% 40%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    
+    --secondary: 24 89% 60%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 33 39% 60%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 50% 40%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Happy Campers styles */
+@layer utilities {
+  .hc-primary-green {
+    @apply bg-[rgb(var(--hc-primary-green))];
+  }
+  
+  .hc-orange {
+    @apply bg-[rgb(var(--hc-orange))];
+  }
+  
+  .hc-brown {
+    @apply bg-[rgb(var(--hc-brown))];
+  }
+  
+  .text-hc-primary-green {
+    @apply text-[rgb(var(--hc-primary-green))];
+  }
+  
+  .text-hc-orange {
+    @apply text-[rgb(var(--hc-orange))];
+  }
+  
+  .text-hc-brown {
+    @apply text-[rgb(var(--hc-brown))];
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
 }

@@ -1,103 +1,214 @@
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { getFeaturedRVs } from "@/lib/rv-data";
+import Link from "next/link";
 import Image from "next/image";
+import { MapPin, Users, Calendar, ArrowRight } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const featuredRVs = getFeaturedRVs();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-b from-green-50 to-white">
+        <div className="absolute inset-0 bg-[url('/images/HC_Homepage_Hero.jpg')] bg-cover bg-center opacity-10" />
+        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              <span className="block">Your Adventure</span>
+              <span className="block text-primary">Starts Here</span>
+            </h1>
+            <p className="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
+              Experience the freedom of the open road with Happy Campers RV Rentals. 
+              Premium RVs for unforgettable Pacific Northwest adventures.
+            </p>
+            <div className="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
+              <div className="rounded-md shadow">
+                <Link href="/rvs">
+                  <Button size="lg" className="w-full">
+                    Browse RVs
+                  </Button>
+                </Link>
+              </div>
+              <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                <Link href="/inquiry">
+                  <Button size="lg" variant="outline" className="w-full">
+                    Get a Quote
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        {/* Stats */}
+        <div className="relative bg-white/80 backdrop-blur">
+          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary">10+</p>
+                <p className="mt-2 text-lg text-gray-600">Premium RVs</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary">500+</p>
+                <p className="mt-2 text-lg text-gray-600">Happy Customers</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-bold text-primary">5★</p>
+                <p className="mt-2 text-lg text-gray-600">Average Rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured RVs */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Featured RVs
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Handpicked selections for your perfect adventure
+            </p>
+          </div>
+          
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {featuredRVs.map((rv) => (
+              <Card key={rv.id} className="overflow-hidden transition-shadow hover:shadow-lg">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={rv.images[0]}
+                    alt={rv.name}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    ${rv.pricePerDay}/day
+                  </div>
+                </div>
+                <CardHeader>
+                  <CardTitle className="line-clamp-1">{rv.name}</CardTitle>
+                  <CardDescription className="flex items-center gap-4 text-sm">
+                    <span className="flex items-center gap-1">
+                      <Users className="h-4 w-4" />
+                      Sleeps {rv.sleeps}
+                    </span>
+                    <span>{rv.type}</span>
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600 line-clamp-2">
+                    {rv.description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {rv.highlights.slice(0, 2).map((highlight, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Link href={`/rvs/${rv.slug}`} className="w-full">
+                    <Button className="w-full" variant="outline">
+                      View Details
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link href="/rvs">
+              <Button size="lg">
+                View All RVs
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Why Choose Happy Campers?
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              We make RV rental easy and enjoyable
+            </p>
+          </div>
+          
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            <div className="text-center">
+              <div className="mx-auto h-12 w-12 text-primary">
+                <MapPin className="h-full w-full" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold">Prime Locations</h3>
+              <p className="mt-2 text-gray-600">
+                Conveniently located for easy access to Pacific Northwest adventures
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mx-auto h-12 w-12 text-primary">
+                <Users className="h-full w-full" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold">Expert Support</h3>
+              <p className="mt-2 text-gray-600">
+                Friendly staff ready to help you plan the perfect trip
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mx-auto h-12 w-12 text-primary">
+                <Calendar className="h-full w-full" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold">Flexible Booking</h3>
+              <p className="mt-2 text-gray-600">
+                Easy online booking with flexible cancellation policies
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-primary py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            Ready to Start Your Adventure?
+          </h2>
+          <p className="mt-4 text-lg text-green-100">
+            Browse our selection of premium RVs and find your perfect match
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <Link href="/rvs">
+              <Button size="lg" variant="secondary">
+                Browse RVs
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="bg-white/10 text-white border-white hover:bg-white hover:text-primary">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
