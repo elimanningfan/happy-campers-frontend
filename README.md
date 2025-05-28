@@ -169,21 +169,38 @@ No environment variables are required for the current prototype.
 ## Version History
 
 ### v0.4.0 - Enhanced RV Fleet Page (2025-05-28)
-- 🚀 **Enhanced RV Fleet Page**
-  - Added advanced search functionality with real-time filtering
-  - Implemented price range slider (0-$500/day)
-  - Added view mode toggle (Grid/List views)
-  - Enhanced filtering system with:
-    - RV Type with descriptions
-    - Sleeping capacity options
-    - Feature-based filtering (Pet-friendly, WiFi, Solar, Generator)
-    - Price range filtering
-  - Added sorting options (Price, Size, Newest, Popular)
-  - Improved UI with hero section and search bar
-  - Added featured badge for premium RVs
-  - Enhanced mobile responsiveness
+- **Enhanced RV Fleet Page**: Implemented advanced filtering, sorting, and search functionality with:
+  - Real-time search by make, model, type, or description
+  - Price range slider for filtering ($0-$500/day)
+  - View mode toggle (Grid/List views)
+  - RV type filter with descriptions
+  - Sleeping capacity options
+  - Feature-based filtering (Pet-friendly, WiFi, Solar, Generator)
+  - Sorting options (Price, Size, Newest, Popular)
+  - Featured badges for premium RVs
   - Quick availability check buttons
-  - Year display for each RV
+  - Enhanced mobile responsiveness
+- **New UI Components**: Created slider and checkbox components for enhanced filtering
+
+### v0.4.1 - 2025-05-28
+- **Admin Fleet Management Dashboard**: Created comprehensive fleet management system at `/admin/fleet` with:
+  - Dashboard overview with key metrics (Total RVs, Available, Revenue, Bookings)
+  - Fleet status overview with visual indicators
+  - Upcoming bookings preview
+  - Popular RVs analytics
+  - Maintenance schedule tracking
+  - Quick action cards for fleet management
+- **RV Management Page**: Built admin RV inventory management at `/admin/fleet/rvs` with:
+  - Comprehensive table view with all RV details
+  - Advanced search and filtering capabilities
+  - Status tracking (Available, Booked, Maintenance, Unavailable)
+  - Revenue and booking analytics per RV
+  - Bulk selection and actions
+  - Condition monitoring
+  - Maintenance scheduling
+  - Quick actions dropdown (View, Edit, Duplicate, Delete)
+  - Real-time statistics cards
+- **Admin Navigation**: Fleet management integrated into admin sidebar navigation
 
 ### Version 2.3.0 - December 28, 2024
 - Added category management interface with CRUD operations
