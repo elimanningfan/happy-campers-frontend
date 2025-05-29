@@ -176,12 +176,61 @@ No environment variables are required for the current prototype.
 - `npm run lint` - Runs ESLint to check code quality
 - `npm run import-media` - Import media from CSV file
 - `npm run download-media` - Download all media images from original URLs
+- `npm run update-media-paths` - Update media library with downloaded image paths
+- `npm run generate-thumbnails` - Generate thumbnails for existing images
 
 ### Media Download Script
 
 The `npm run download-media` script is used to download all media images from their original URLs. This script is useful for populating the media library with images from external sources.
 
+## Media Library
+
+The project includes a comprehensive media library system for managing images and media files.
+
+**Features:**
+- Grid and list view modes
+- Search functionality across names, descriptions, and tags
+- Category-based filtering (Brand, RVs, Lifestyle, Scenery, etc.)
+- Bulk selection and management
+- Drag-and-drop upload functionality
+- File upload with automatic categorization
+- Image metadata tracking
+- Automatic thumbnail generation (300x300px)
+- Media picker component for easy image selection in editors
+
+**Scripts:**
+- `npm run import-media`: Import media from CSV file
+- `npm run download-media`: Download images from original URLs
+- `npm run update-media-paths`: Update media library with downloaded image paths
+- `npm run generate-thumbnails`: Generate thumbnails for existing images
+
+**API Endpoints:**
+- `POST /api/media/upload`: Upload new images to the media library with automatic thumbnail generation
+
+**Image Processing:**
+- Automatic thumbnail generation for uploaded images
+- Image dimension extraction
+- Web-optimized image formats
+- Support for multiple image sizes (future responsive images)
+
+**Media Directory Structure:**
+```
+public/images/media/
+├── [image-files]          # Original uploaded images
+└── thumbnails/            # Generated thumbnails (300x300)
+```
+
 ## Version History
+
+### v0.4.7 - Media Upload & Image Processing (Latest)
+- **Implemented drag-and-drop upload** functionality in media library
+- **Created upload API endpoint** with automatic thumbnail generation
+- **Added image processing utilities** using Sharp library
+- **Built media picker component** for selecting images in RV and blog editors
+- **Integrated media picker** into RV edit page for gallery management
+- **Generated thumbnails** for all 50 existing media images
+- **Added upload dialog** with preview and category selection
+- **Implemented proper error handling** for corrupt or invalid images
 
 ### v0.4.6 - Media Library System
 - Implemented standalone media library at `/admin/media` as foundation for CMS

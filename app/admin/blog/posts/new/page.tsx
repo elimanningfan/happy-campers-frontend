@@ -25,6 +25,8 @@ import {
 } from 'lucide-react';
 import { categories, tags, authors } from '@/data/blog-posts';
 import { BlogPost } from '@/types/blog';
+import { MediaPicker } from '@/components/admin/media-picker';
+import { MediaItem } from '@/lib/types/media';
 
 type PostStatus = 'draft' | 'published' | 'scheduled';
 
@@ -32,6 +34,7 @@ export default function NewBlogPostPage() {
   const router = useRouter();
   const [isPublishing, setIsPublishing] = useState(false);
   const [isSavingDraft, setIsSavingDraft] = useState(false);
+  const [isMediaPickerOpen, setIsMediaPickerOpen] = useState(false);
   
   // Form state
   const [title, setTitle] = useState('');
@@ -141,6 +144,10 @@ export default function NewBlogPostPage() {
     });
     setIsPublishing(false);
     router.push('/admin/blog/posts');
+  };
+
+  const handleMediaSelect = (media: MediaItem) => {
+    setFeaturedImage(media.url);
   };
 
   return (
@@ -389,20 +396,28 @@ export default function NewBlogPostPage() {
                       </Button>
                     </div>
                   ) : (
-                    <div>
+                    <button
+                      onClick={() => setIsMediaPickerOpen(true)}
+                      className="w-full py-8 hover:bg-gray-50 transition-colors rounded"
+                    >
                       <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-2" />
                       <p className="text-sm text-gray-600">
-                        Click to upload or drag and drop
+                        Click to select from media library
                       </p>
-                    </div>
+                    </button>
                   )}
                 </div>
-                <Input
-                  type="text"
-                  value={featuredImage}
-                  onChange={(e) => setFeaturedImage(e.target.value)}
-                  placeholder="Or enter image URL"
-                />
+                <div className="flex gap-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setIsMediaPickerOpen(true)}
+                    className="flex-1"
+                  >
+                    <ImageIcon className="h-4 w-4 mr-2" />
+                    Select from Library
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -457,6 +472,13 @@ export default function NewBlogPostPage() {
           </Card>
         </div>
       </div>
+      {/* Media Picker Dialog */}
+      <MediaPicker
+        isOpen={isMediaPickerOpen}
+        onClose={() => setIsMediaPickerOpen(false)}
+        onSelect={handleMediaSelect}
+        title="Select Featured Image"
+      />
     </div>
   );
 }

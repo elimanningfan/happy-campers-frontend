@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "import-media": "tsx scripts/import-media-from-csv.ts",
-    "download-media": "tsx scripts/download-media-images.ts"
+    "download-media": "tsx scripts/download-media-images.ts",
+    "update-media-paths": "tsx scripts/update-media-paths.ts",
+    "generate-thumbnails": "tsx scripts/generate-thumbnails.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -50,6 +52,7 @@
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.4",
     "recharts": "^2.15.3",
+    "sharp": "^0.34.2",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.25.32"

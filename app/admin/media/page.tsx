@@ -1,12 +1,15 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { 
   Upload, 
   Search, 
@@ -18,7 +21,9 @@ import {
   Image as ImageIcon,
   X,
   Check,
-  Filter
+  Filter,
+  CloudUpload,
+  FileImage
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { initialMediaLibrary, mediaCategories } from '@/lib/data/media-library';
@@ -30,6 +35,10 @@ export default function MediaLibraryPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const [isSelecting, setIsSelecting] = useState(false);
+  const [isUploadOpen, setIsUploadOpen] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [isDragging, setIsDragging] = useState(false);
+  const [uploadCategory, setUploadCategory] = useState<MediaCategory>('misc');
 
   // Filter media based on category and search
   const filteredMedia = useMemo(() => {
@@ -68,6 +77,83 @@ export default function MediaLibraryPage() {
   const clearSelection = () => {
     setSelectedItems([]);
     setIsSelecting(false);
+  };
+
+  // Drag and drop handlers
+  const handleDragEnter = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  }, []);
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  }, []);
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+
+    const files = Array.from(e.dataTransfer.files).filter(file => 
+      file.type.startsWith('image/')
+    );
+
+    if (files.length > 0) {
+      setUploadedFiles(files);
+      setIsUploadOpen(true);
+    }
+  }, []);
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []).filter(file => 
+      file.type.startsWith('image/')
+    );
+    
+    if (files.length > 0) {
+      setUploadedFiles(files);
+      setIsUploadOpen(true);
+    }
+  };
+
+  const handleUpload = async () => {
+    try {
+      const formData = new FormData();
+      uploadedFiles.forEach(file => {
+        formData.append('files', file);
+      });
+      formData.append('category', uploadCategory);
+
+      const response = await fetch('/api/media/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
+
+      const result = await response.json();
+      console.log('Upload successful:', result);
+      
+      // Close dialog and refresh
+      setIsUploadOpen(false);
+      setUploadedFiles([]);
+      
+      // In a real app, you would refresh the media library here
+      // For now, we'll just reload the page
+      window.location.reload();
+    } catch (error) {
+      console.error('Upload error:', error);
+      alert('Failed to upload images. Please try again.');
+    }
   };
 
   const renderMediaItem = (item: MediaItem) => {
@@ -196,133 +282,114 @@ export default function MediaLibraryPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div 
+      className="space-y-6"
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
+      {/* Drag overlay */}
+      {isDragging && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
+          <div className="bg-white rounded-lg p-8 flex flex-col items-center space-y-4">
+            <CloudUpload className="h-16 w-16 text-primary-orange" />
+            <p className="text-xl font-semibold">Drop images here to upload</p>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-heading font-bold text-dark-gray">Media Library</h1>
-          <p className="text-gray-600 mt-1">Manage all your images and media files</p>
-        </div>
-        <div className="flex gap-3">
-          <Button className="bg-primary-orange hover:bg-primary-orange/90">
-            <Upload className="mr-2 h-4 w-4" />
-            Upload Files
-          </Button>
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-600">Total Files</p>
-                <p className="text-2xl font-bold">{initialMediaLibrary.length}</p>
-              </div>
-              <ImageIcon className="h-8 w-8 text-gray-400" />
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-600">Storage Used</p>
-                <p className="text-2xl font-bold">2.4 GB</p>
-              </div>
-              <FolderOpen className="h-8 w-8 text-gray-400" />
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-600">Categories</p>
-                <p className="text-2xl font-bold">{mediaCategories.length}</p>
-              </div>
-              <Filter className="h-8 w-8 text-gray-400" />
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-gray-600">Recent Uploads</p>
-                <p className="text-2xl font-bold">12</p>
-              </div>
-              <Upload className="h-8 w-8 text-gray-400" />
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Filters and Search */}
-      <div className="flex gap-4 items-center">
-        <div className="relative flex-1 max-w-md">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-          <Input
-            placeholder="Search media..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10"
-          />
+          <h1 className="text-2xl font-bold text-gray-900">Media Library</h1>
+          <p className="text-gray-600 mt-1">Manage images and media files for your website</p>
         </div>
         
-        <div className="flex gap-2">
-          {!isSelecting ? (
-            <Button 
-              variant="outline"
-              onClick={() => setIsSelecting(true)}
-            >
-              Select
+        <div className="flex items-center gap-2">
+          <label htmlFor="file-upload">
+            <Button className="bg-primary-orange hover:bg-primary-orange/90 cursor-pointer">
+              <Upload className="h-4 w-4 mr-2" />
+              Upload Images
             </Button>
-          ) : (
-            <>
+            <input
+              id="file-upload"
+              type="file"
+              className="hidden"
+              accept="image/*"
+              multiple
+              onChange={handleFileSelect}
+            />
+          </label>
+        </div>
+      </div>
+
+      {/* Search and Actions Bar */}
+      <div className="bg-white rounded-lg border p-4">
+        <div className="flex gap-4 items-center">
+          <div className="relative flex-1 max-w-md">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Input
+              placeholder="Search media..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10"
+            />
+          </div>
+          
+          <div className="flex gap-2">
+            {!isSelecting ? (
               <Button 
                 variant="outline"
-                onClick={selectAll}
+                onClick={() => setIsSelecting(true)}
               >
-                Select All
+                Select
               </Button>
-              <Button 
-                variant="outline"
-                onClick={clearSelection}
-              >
-                <X className="h-4 w-4 mr-1" />
-                Cancel
-              </Button>
-              {selectedItems.length > 0 && (
+            ) : (
+              <>
                 <Button 
                   variant="outline"
-                  className="text-red-600 hover:text-red-700"
+                  onClick={selectAll}
                 >
-                  <Trash2 className="h-4 w-4 mr-1" />
-                  Delete ({selectedItems.length})
+                  Select All
                 </Button>
-              )}
-            </>
-          )}
-          
-          <div className="flex border rounded-md">
-            <Button
-              variant={view === 'grid' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => setView('grid')}
-              className="rounded-r-none"
-            >
-              <Grid3X3 className="h-4 w-4" />
-            </Button>
-            <Button
-              variant={view === 'list' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => setView('list')}
-              className="rounded-l-none"
-            >
-              <List className="h-4 w-4" />
-            </Button>
+                <Button 
+                  variant="outline"
+                  onClick={clearSelection}
+                >
+                  <X className="h-4 w-4 mr-1" />
+                  Cancel
+                </Button>
+                {selectedItems.length > 0 && (
+                  <Button 
+                    variant="outline"
+                    className="text-red-600 hover:text-red-700"
+                  >
+                    <Trash2 className="h-4 w-4 mr-1" />
+                    Delete ({selectedItems.length})
+                  </Button>
+                )}
+              </>
+            )}
+            
+            <div className="flex border rounded-md">
+              <Button
+                variant={view === 'grid' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setView('grid')}
+                className="rounded-r-none"
+              >
+                <Grid3X3 className="h-4 w-4" />
+              </Button>
+              <Button
+                variant={view === 'list' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setView('list')}
+                className="rounded-l-none"
+              >
+                <List className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -410,6 +477,72 @@ export default function MediaLibraryPage() {
           )}
         </div>
       </div>
+
+      {/* Upload Dialog */}
+      <Dialog open={isUploadOpen} onOpenChange={setIsUploadOpen}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>Upload Images</DialogTitle>
+          </DialogHeader>
+          
+          <div className="space-y-4">
+            {/* Preview uploaded files */}
+            <div className="grid grid-cols-3 gap-4">
+              {uploadedFiles.map((file, index) => (
+                <div key={index} className="relative group">
+                  <img
+                    src={URL.createObjectURL(file)}
+                    alt={file.name}
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                    <Button
+                      size="sm"
+                      variant="secondary"
+                      onClick={() => setUploadedFiles(files => files.filter((_, i) => i !== index))}
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                  <p className="text-xs mt-1 truncate">{file.name}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Category selection */}
+            <div>
+              <Label htmlFor="category">Category</Label>
+              <Select value={uploadCategory} onValueChange={(value) => setUploadCategory(value as MediaCategory)}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {mediaCategories.map(category => (
+                    <SelectItem key={category.id} value={category.id}>
+                      {category.icon} {category.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Upload button */}
+            <div className="flex justify-end gap-2">
+              <Button variant="outline" onClick={() => setIsUploadOpen(false)}>
+                Cancel
+              </Button>
+              <Button 
+                onClick={handleUpload}
+                className="bg-primary-orange hover:bg-primary-orange/90"
+                disabled={uploadedFiles.length === 0}
+              >
+                <Upload className="h-4 w-4 mr-2" />
+                Upload {uploadedFiles.length} {uploadedFiles.length === 1 ? 'Image' : 'Images'}
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

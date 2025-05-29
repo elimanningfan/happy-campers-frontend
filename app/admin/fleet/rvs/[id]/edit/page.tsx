@@ -15,6 +15,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, Save, Upload, X, Plus, Trash2, DollarSign, ImageIcon, FileText, Settings, Shield, Search } from "lucide-react";
 import { rvData } from "@/lib/rv-data";
 import { cn } from "@/lib/utils";
+import { MediaPicker } from "@/components/admin/media-picker";
+import { MediaItem } from "@/lib/types/media";
 
 // Features list
 const availableFeatures = [
@@ -67,6 +69,7 @@ export default function EditRVPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [isMediaPickerOpen, setIsMediaPickerOpen] = useState(false);
   
   // Find the RV data
   const rvId = params.id as string;
@@ -140,14 +143,21 @@ export default function EditRVPage() {
   };
 
   const handleImageAdd = () => {
-    // In a real app, this would open a file picker
-    const newImage = `/images/rv-placeholder-${formData.images.length + 1}.jpg`;
-    handleInputChange("images", [...formData.images, newImage]);
+    setIsMediaPickerOpen(true);
+  };
+
+  const handleImageSelect = (media: MediaItem) => {
+    setFormData(prev => ({
+      ...prev,
+      images: [...prev.images, media.url]
+    }));
   };
 
   const handleImageRemove = (index: number) => {
-    const newImages = formData.images.filter((_, i) => i !== index);
-    handleInputChange("images", newImages);
+    setFormData(prev => ({
+      ...prev,
+      images: prev.images.filter((_, i) => i !== index)
+    }));
   };
 
   const handleSave = async () => {
@@ -554,7 +564,7 @@ export default function EditRVPage() {
                   onClick={handleImageAdd}
                 >
                   <Upload className="h-8 w-8" />
-                  <span>Upload Image</span>
+                  <span>Select from Library</span>
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground">
@@ -681,6 +691,13 @@ export default function EditRVPage() {
           </Card>
         </TabsContent>
       </Tabs>
+      {/* Media Picker Dialog */}
+      <MediaPicker
+        isOpen={isMediaPickerOpen}
+        onClose={() => setIsMediaPickerOpen(false)}
+        onSelect={handleImageSelect}
+        title="Select RV Image"
+      />
     </div>
   );
 }
