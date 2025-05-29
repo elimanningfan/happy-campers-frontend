@@ -56,6 +56,13 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Happy Campers brand colors
+        'primary-orange': 'rgb(230, 95, 43)',
+        'forest-green': 'rgb(44, 95, 65)',
+        'earth-brown': 'rgb(139, 69, 19)',
+        'cream': 'rgb(250, 248, 245)',
+        'hc-white': 'rgb(255, 255, 255)',
+        'dark-gray': 'rgb(51, 51, 51)',
       },
       borderRadius: {
         lg: "var(--radius)",

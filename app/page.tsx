@@ -213,7 +213,9 @@ export default function HomePage() {
               </Button>
             </Link>
           </div>
-          <p className="mt-4 text-sm opacity-75">v0.4.4</p>
+          <p className="text-xs text-gray-500 mt-12">
+            Happy Campers RV Rentals &copy; 2024 | v0.4.5
+          </p>
         </div>
       </section>
 
