@@ -214,7 +214,7 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="text-xs text-gray-500 mt-12">
-            Happy Campers RV Rentals &copy; 2024 | v0.4.5
+            Happy Campers RV Rentals v0.4.6 &copy; {new Date().getFullYear()}
           </p>
         </div>
       </section>

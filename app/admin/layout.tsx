@@ -28,7 +28,8 @@ import {
   Shield,
   ChevronRight,
   Bell,
-  Search
+  Search,
+  Image
 } from 'lucide-react';
 
 const sidebarNavigation = [
@@ -43,6 +44,12 @@ const sidebarNavigation = [
     href: '/admin/inquiries', 
     icon: Calendar,
     description: 'Customer inquiries'
+  },
+  { 
+    name: 'Media Library', 
+    href: '/admin/media', 
+    icon: Image,
+    description: 'Media management'
   },
   { 
     name: 'RV Fleet', 
