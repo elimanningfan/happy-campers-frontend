@@ -178,6 +178,8 @@ No environment variables are required for the current prototype.
 - `npm run download-media` - Download all media images from original URLs
 - `npm run update-media-paths` - Update media library with downloaded image paths
 - `npm run generate-thumbnails` - Generate thumbnails for existing images
+- `npm run clean-csv` - Remove duplicate URLs from CSV file
+- `npm run analyze-media` - Analyze media import data before importing
 
 ### Media Download Script
 
@@ -203,26 +205,44 @@ The project includes a comprehensive media library system for managing images an
 - `npm run download-media`: Download images from original URLs
 - `npm run update-media-paths`: Update media library with downloaded image paths
 - `npm run generate-thumbnails`: Generate thumbnails for existing images
+- `npm run clean-csv`: Remove duplicate URLs from CSV file
+- `npm run analyze-media`: Analyze media import data before importing
 
-**API Endpoints:**
-- `POST /api/media/upload`: Upload new images to the media library with automatic thumbnail generation
+### Media Import Scripts
 
-**Image Processing:**
-- Automatic thumbnail generation for uploaded images
-- Image dimension extraction
-- Web-optimized image formats
-- Support for multiple image sizes (future responsive images)
+The project includes comprehensive scripts for importing media from CSV files:
 
-**Media Directory Structure:**
-```
-public/images/media/
-├── [image-files]          # Original uploaded images
-└── thumbnails/            # Generated thumbnails (300x300)
-```
+- **`scripts/clean-csv.ts`**: Removes duplicate URLs from the CSV file while preserving the first occurrence
+- **`scripts/analyze-media-import.ts`**: Analyzes the CSV file to check for duplicates and validate URLs
+- **`scripts/import-media-from-csv.ts`**: Imports media items from CSV, generates metadata, and categorizes them
+- **`scripts/download-media-images.ts`**: Downloads all images from their original URLs
+- **`scripts/generate-thumbnails.ts`**: Creates 300x300px thumbnails for all media images
+
+**Import Process:**
+1. Clean the CSV file to remove duplicates: `npm run clean-csv`
+2. Analyze the cleaned CSV: `npm run analyze-media`
+3. Import media from CSV: `npm run import-media`
+4. Download images: `npm run download-media`
+5. Generate thumbnails: `npm run generate-thumbnails`
 
 ## Version History
 
-### v0.4.7 - Media Upload & Image Processing (Latest)
+### v0.4.8 - Enhanced Media Import System (Latest)
+- **Implemented CSV cleaning script** to remove duplicate URLs (reduced from 238 to 59 unique items)
+- **Enhanced import process** with progress tracking and better error handling
+- **Successfully imported 51 media items** from cleaned CSV (8 skipped due to missing descriptions)
+- **Automated categorization** based on URLs and AI-generated descriptions:
+  - Brand: 4 items (logos and brand assets)
+  - Miscellaneous: 14 items
+  - RVs Exteriors: 13 items
+  - Lifestyle: 4 items
+  - Scenery: 12 items
+  - RVs Floor Plans: 3 items
+  - RVs Interiors: 1 item
+- **All images downloaded and thumbnails generated** for complete media library
+- **Streamlined import workflow** with proper validation and error reporting
+
+### v0.4.7 - Media Upload & Image Processing
 - **Implemented drag-and-drop upload** functionality in media library
 - **Created upload API endpoint** with automatic thumbnail generation
 - **Added image processing utilities** using Sharp library

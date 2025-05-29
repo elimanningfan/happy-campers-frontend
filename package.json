@@ -1,6 +1,6 @@
 {
   "name": "happy-campers-frontend",
-  "version": "0.2.0",
+  "version": "0.4.8",
   "private": true,
   "scripts": {
     "dev": "next dev -p 4000",
@@ -59,10 +59,15 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/axios": "^0.9.36",
+    "@types/csv-stringify": "^1.4.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
+    "axios": "^1.9.0",
+    "chalk": "^5.4.1",
+    "csv-stringify": "^6.5.2",
     "eslint": "^8",
     "eslint-config-next": "15.1.4",
     "postcss": "^8",
