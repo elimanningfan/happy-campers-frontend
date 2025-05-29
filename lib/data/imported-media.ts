@@ -1,7 +1,8 @@
 import { MediaItem } from '@/lib/types/media';
 
-// Auto-generated from CSV import on 2025-05-29T16:36:37.737Z
+// Auto-generated from CSV import on 2025-05-29T16:50:24.389Z
 // Total items: 86
+// Updated paths to match actual downloaded files
 
 export const importedMediaLibrary: MediaItem[] = [
   {
@@ -323,10 +324,10 @@ export const importedMediaLibrary: MediaItem[] = [
   },
   {
     "id": "2021-minnie-winnie-31h-notext",
-    "url": "/images/media/2021-Minnie-Winnie-31H_noText.png",
+    "url": "/images/media/2021-Minnie-Winnie-31H_NoText_.png",
     "thumbnailUrl": "/images/media/thumbnails/2021-Minnie-Winnie-31H_noText.png",
     "name": "2021 Minnie Winnie 31H NoText",
-    "fileName": "2021-Minnie-Winnie-31H_noText.png",
+    "fileName": "2021-Minnie-Winnie-31H_NoText_.png",
     "altText": "The image is a floor plan of a small living space, likely an RV or mobile home. It consists of sever...",
     "description": "The image is a floor plan of a small living space, likely an RV or mobile home. It consists of several distinct areas:\n\n1. **Bedroom**: On the left side, there's a large bed, likely a double or queen, with storage spaces beneath or around it.\n\n2. **Bathroom Area**: Adjacent to the bedroom, there's a bathroom setup which includes a toilet and a small sink. A shower or bathtub appears to be nearby within a separate section.\n\n3. **Kitchen**: Moving right towards the center, there's a kitchen area with a sink and a stove, including overhead cabinets or storage.\n\n4. **Living/Dining Area**: On the right side, there’s a seating area with a sofa or convertible bench, possibly with a table in front of it, which might transform into another sleeping area.\n\n5. **Entry/Exit**: The entrance seems to be at the bottom right, near the living area.\n\nThe layout is compact and efficient, maximizing space functionality typically seen in recreational vehicles or small apartments. The overall design is straightforward, with light and neutral tones.",
     "category": "rvs/floor-plans",
@@ -2474,15 +2475,3 @@ export const importedMediaLibrary: MediaItem[] = [
     "usage": []
   }
 ];
-
-// Category counts
-export const mediaCategoryCounts = {
-  "brand": 4,
-  "misc": 18,
-  "rvs/exteriors": 28,
-  "lifestyle": 4,
-  "scenery": 26,
-  "rvs/floor-plans": 3,
-  "rvs/interiors": 2,
-  "team": 1
-};

@@ -166,6 +166,21 @@ This project is ready to be deployed to Netlify or Vercel. Simply connect your G
 
 No environment variables are required for the current prototype.
 
+## Scripts
+
+### Available Scripts
+
+- `npm run dev` - Starts the development server on port 4000
+- `npm run build` - Creates a production build
+- `npm start` - Runs the production build
+- `npm run lint` - Runs ESLint to check code quality
+- `npm run import-media` - Import media from CSV file
+- `npm run download-media` - Download all media images from original URLs
+
+### Media Download Script
+
+The `npm run download-media` script is used to download all media images from their original URLs. This script is useful for populating the media library with images from external sources.
+
 ## Version History
 
 ### v0.4.6 - Media Library System
