@@ -127,8 +127,8 @@ function createMediaName(url: string, description: string): string {
 async function importMediaFromCSV() {
   console.log('Starting media import from CSV...');
   
-  // Read CSV file
-  const csvPath = path.join(process.cwd(), '..', 'happy_campers_rv_images_descriptions.csv');
+  // Read CSV file - using cleaned version
+  const csvPath = path.join(process.cwd(), '..', 'happy_campers_rv_images_descriptions_cleaned.csv');
   const csvContent = fs.readFileSync(csvPath, 'utf-8');
   
   // Parse CSV with proper options for multi-line fields
@@ -139,28 +139,32 @@ async function importMediaFromCSV() {
     skip_records_with_empty_values: true
   });
   
-  console.log(`Found ${records.length} records in CSV`);
+  console.log(`Found ${records.length} records in cleaned CSV`);
   
   // Convert to MediaItem format
   const mediaItems: MediaItem[] = [];
   let skippedCount = 0;
+  let processedCount = 0;
   
   records.forEach((record: any, index: number) => {
     // Field names from CSV header
     const url = record['Image URL'] || '';
     const description = record['Description'] || '';
     
+    // Progress indicator
+    process.stdout.write(`Processing: ${index + 1}/${records.length}\r`);
+    
     // Skip if no URL
     if (!url || url.trim() === '') {
       skippedCount++;
-      console.log(`Skipping record ${index + 1}: No URL`);
+      console.log(`\nSkipping record ${index + 1}: No URL`);
       return;
     }
     
     // Skip failed downloads or empty descriptions
     if (description.includes('Failed to download') || description.trim() === '') {
       skippedCount++;
-      console.log(`Skipping record ${index + 1}: Failed download or empty description`);
+      console.log(`\nSkipping record ${index + 1}: Failed download or empty description`);
       return;
     }
     
@@ -196,10 +200,11 @@ async function importMediaFromCSV() {
     };
     
     mediaItems.push(mediaItem);
+    processedCount++;
   });
   
-  console.log(`Successfully processed ${mediaItems.length} media items`);
-  console.log(`Skipped ${skippedCount} failed downloads`);
+  console.log(`\n\nSuccessfully processed ${processedCount} media items`);
+  console.log(`Skipped ${skippedCount} items`);
   
   // Group by category for summary
   const categoryCounts: Record<string, number> = {};

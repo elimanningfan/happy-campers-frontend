@@ -1,8 +1,7 @@
 import { MediaItem } from '@/lib/types/media';
 
-// Auto-generated from CSV import on 2025-05-29T16:50:24.389Z
-// Total items: 86
-// Updated paths to match actual downloaded files
+// Auto-generated from CSV import on 2025-05-29T19:43:34.172Z
+// Total items: 51
 
 export const importedMediaLibrary: MediaItem[] = [
   {
@@ -22,10 +21,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/png",
-    "size": 353057,
+    "size": 386437,
     "dimensions": {
-      "width": 1709,
-      "height": 1009
+      "width": 1602,
+      "height": 1020
     },
     "metadata": {
       "uploadedBy": "system",
@@ -51,10 +50,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/png",
-    "size": 138732,
+    "size": 2032442,
     "dimensions": {
-      "width": 1678,
-      "height": 1061
+      "width": 1234,
+      "height": 680
     },
     "metadata": {
       "uploadedBy": "system",
@@ -82,10 +81,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/jpeg",
-    "size": 215772,
+    "size": 290044,
     "dimensions": {
-      "width": 1786,
-      "height": 1122
+      "width": 1056,
+      "height": 1228
     },
     "metadata": {
       "uploadedBy": "system",
@@ -109,10 +108,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 1793891,
+    "size": 469129,
     "dimensions": {
-      "width": 1662,
-      "height": 1003
+      "width": 852,
+      "height": 809
     },
     "metadata": {
       "uploadedBy": "system",
@@ -136,10 +135,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 1932537,
+    "size": 775673,
     "dimensions": {
-      "width": 802,
-      "height": 863
+      "width": 1584,
+      "height": 839
     },
     "metadata": {
       "uploadedBy": "system",
@@ -167,10 +166,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "chateau"
     ],
     "mimeType": "image/jpeg",
-    "size": 674779,
+    "size": 878686,
     "dimensions": {
-      "width": 1360,
-      "height": 1259
+      "width": 1408,
+      "height": 1295
     },
     "metadata": {
       "uploadedBy": "system",
@@ -195,10 +194,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/png",
-    "size": 1765961,
+    "size": 181050,
     "dimensions": {
-      "width": 1453,
-      "height": 633
+      "width": 1421,
+      "height": 679
     },
     "metadata": {
       "uploadedBy": "system",
@@ -223,10 +222,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "sunset"
     ],
     "mimeType": "image/jpeg",
-    "size": 800690,
+    "size": 964887,
     "dimensions": {
-      "width": 829,
-      "height": 1083
+      "width": 1496,
+      "height": 766
     },
     "metadata": {
       "uploadedBy": "system",
@@ -250,10 +249,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 1140494,
+    "size": 1302380,
     "dimensions": {
-      "width": 925,
-      "height": 1186
+      "width": 1362,
+      "height": 1254
     },
     "metadata": {
       "uploadedBy": "system",
@@ -277,10 +276,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 1719803,
+    "size": 584093,
     "dimensions": {
-      "width": 1171,
-      "height": 874
+      "width": 1625,
+      "height": 799
     },
     "metadata": {
       "uploadedBy": "system",
@@ -309,10 +308,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/png",
-    "size": 1818382,
+    "size": 2037351,
     "dimensions": {
-      "width": 1206,
-      "height": 999
+      "width": 840,
+      "height": 1293
     },
     "metadata": {
       "uploadedBy": "system",
@@ -324,10 +323,10 @@ export const importedMediaLibrary: MediaItem[] = [
   },
   {
     "id": "2021-minnie-winnie-31h-notext",
-    "url": "/images/media/2021-Minnie-Winnie-31H_NoText_.png",
+    "url": "/images/media/2021-Minnie-Winnie-31H_noText.png",
     "thumbnailUrl": "/images/media/thumbnails/2021-Minnie-Winnie-31H_noText.png",
     "name": "2021 Minnie Winnie 31H NoText",
-    "fileName": "2021-Minnie-Winnie-31H_NoText_.png",
+    "fileName": "2021-Minnie-Winnie-31H_noText.png",
     "altText": "The image is a floor plan of a small living space, likely an RV or mobile home. It consists of sever...",
     "description": "The image is a floor plan of a small living space, likely an RV or mobile home. It consists of several distinct areas:\n\n1. **Bedroom**: On the left side, there's a large bed, likely a double or queen, with storage spaces beneath or around it.\n\n2. **Bathroom Area**: Adjacent to the bedroom, there's a bathroom setup which includes a toilet and a small sink. A shower or bathtub appears to be nearby within a separate section.\n\n3. **Kitchen**: Moving right towards the center, there's a kitchen area with a sink and a stove, including overhead cabinets or storage.\n\n4. **Living/Dining Area**: On the right side, there’s a seating area with a sofa or convertible bench, possibly with a table in front of it, which might transform into another sleeping area.\n\n5. **Entry/Exit**: The entrance seems to be at the bottom right, near the living area.\n\nThe layout is compact and efficient, maximizing space functionality typically seen in recreational vehicles or small apartments. The overall design is straightforward, with light and neutral tones.",
     "category": "rvs/floor-plans",
@@ -338,10 +337,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "bathroom"
     ],
     "mimeType": "image/png",
-    "size": 690405,
+    "size": 1024177,
     "dimensions": {
-      "width": 919,
-      "height": 1227
+      "width": 1589,
+      "height": 673
     },
     "metadata": {
       "uploadedBy": "system",
@@ -368,10 +367,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "chateau"
     ],
     "mimeType": "image/png",
-    "size": 298075,
+    "size": 2013012,
     "dimensions": {
-      "width": 1087,
-      "height": 1170
+      "width": 1483,
+      "height": 663
     },
     "metadata": {
       "uploadedBy": "system",
@@ -397,10 +396,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "bathroom"
     ],
     "mimeType": "image/png",
-    "size": 1889388,
+    "size": 1595125,
     "dimensions": {
-      "width": 1501,
-      "height": 734
+      "width": 1262,
+      "height": 1036
     },
     "metadata": {
       "uploadedBy": "system",
@@ -427,10 +426,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/jpeg",
-    "size": 1887095,
+    "size": 711580,
     "dimensions": {
-      "width": 1741,
-      "height": 607
+      "width": 872,
+      "height": 966
     },
     "metadata": {
       "uploadedBy": "system",
@@ -454,10 +453,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 1048116,
+    "size": 1910021,
     "dimensions": {
-      "width": 1427,
-      "height": 1256
+      "width": 1369,
+      "height": 1072
     },
     "metadata": {
       "uploadedBy": "system",
@@ -485,10 +484,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "brand"
     ],
     "mimeType": "image/jpeg",
-    "size": 1355350,
+    "size": 1331350,
     "dimensions": {
-      "width": 1236,
-      "height": 1055
+      "width": 884,
+      "height": 1356
     },
     "metadata": {
       "uploadedBy": "system",
@@ -515,10 +514,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "sunset"
     ],
     "mimeType": "image/jpeg",
-    "size": 939323,
+    "size": 1203469,
     "dimensions": {
-      "width": 1014,
-      "height": 767
+      "width": 1634,
+      "height": 1219
     },
     "metadata": {
       "uploadedBy": "system",
@@ -543,10 +542,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "chateau"
     ],
     "mimeType": "image/jpeg",
-    "size": 959655,
+    "size": 1706172,
     "dimensions": {
-      "width": 861,
-      "height": 1250
+      "width": 1289,
+      "height": 943
     },
     "metadata": {
       "uploadedBy": "system",
@@ -572,10 +571,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "awning"
     ],
     "mimeType": "image/jpeg",
-    "size": 1591641,
+    "size": 151313,
     "dimensions": {
-      "width": 1313,
-      "height": 1353
+      "width": 1116,
+      "height": 947
     },
     "metadata": {
       "uploadedBy": "system",
@@ -602,10 +601,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/png",
-    "size": 1555048,
+    "size": 625092,
     "dimensions": {
-      "width": 1644,
-      "height": 945
+      "width": 1670,
+      "height": 998
     },
     "metadata": {
       "uploadedBy": "system",
@@ -632,10 +631,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/png",
-    "size": 1037583,
+    "size": 955615,
     "dimensions": {
-      "width": 1256,
-      "height": 621
+      "width": 1144,
+      "height": 1025
     },
     "metadata": {
       "uploadedBy": "system",
@@ -662,10 +661,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/png",
-    "size": 216253,
+    "size": 411469,
     "dimensions": {
-      "width": 995,
-      "height": 1281
+      "width": 896,
+      "height": 787
     },
     "metadata": {
       "uploadedBy": "system",
@@ -692,10 +691,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/png",
-    "size": 1494187,
+    "size": 753034,
     "dimensions": {
-      "width": 1618,
-      "height": 1138
+      "width": 1055,
+      "height": 944
     },
     "metadata": {
       "uploadedBy": "system",
@@ -721,10 +720,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "chateau"
     ],
     "mimeType": "image/jpeg",
-    "size": 494483,
+    "size": 391913,
     "dimensions": {
-      "width": 926,
-      "height": 737
+      "width": 1623,
+      "height": 936
     },
     "metadata": {
       "uploadedBy": "system",
@@ -748,10 +747,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 1760650,
+    "size": 773365,
     "dimensions": {
-      "width": 1222,
-      "height": 953
+      "width": 1284,
+      "height": 926
     },
     "metadata": {
       "uploadedBy": "system",
@@ -775,10 +774,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 121817,
+    "size": 948769,
     "dimensions": {
-      "width": 1231,
-      "height": 1389
+      "width": 979,
+      "height": 708
     },
     "metadata": {
       "uploadedBy": "system",
@@ -806,10 +805,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/jpeg",
-    "size": 1411426,
+    "size": 232746,
     "dimensions": {
-      "width": 1068,
-      "height": 613
+      "width": 1057,
+      "height": 1001
     },
     "metadata": {
       "uploadedBy": "system",
@@ -833,10 +832,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 1621556,
+    "size": 1680266,
     "dimensions": {
-      "width": 1222,
-      "height": 921
+      "width": 1302,
+      "height": 825
     },
     "metadata": {
       "uploadedBy": "system",
@@ -861,10 +860,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "lake"
     ],
     "mimeType": "image/jpeg",
-    "size": 520588,
+    "size": 1845557,
     "dimensions": {
-      "width": 887,
-      "height": 1377
+      "width": 1126,
+      "height": 1353
     },
     "metadata": {
       "uploadedBy": "system",
@@ -888,10 +887,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 166618,
+    "size": 1242283,
     "dimensions": {
-      "width": 871,
-      "height": 617
+      "width": 1780,
+      "height": 1292
     },
     "metadata": {
       "uploadedBy": "system",
@@ -915,10 +914,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 281055,
+    "size": 122181,
     "dimensions": {
-      "width": 832,
-      "height": 941
+      "width": 1654,
+      "height": 791
     },
     "metadata": {
       "uploadedBy": "system",
@@ -943,10 +942,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "adventure"
     ],
     "mimeType": "image/jpeg",
-    "size": 1553094,
+    "size": 1600546,
     "dimensions": {
-      "width": 1613,
-      "height": 1188
+      "width": 900,
+      "height": 637
     },
     "metadata": {
       "uploadedBy": "system",
@@ -972,10 +971,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/jpeg",
-    "size": 1769051,
+    "size": 162006,
     "dimensions": {
-      "width": 1514,
-      "height": 1121
+      "width": 1460,
+      "height": 714
     },
     "metadata": {
       "uploadedBy": "system",
@@ -999,10 +998,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 1291636,
+    "size": 421302,
     "dimensions": {
-      "width": 1365,
-      "height": 1191
+      "width": 813,
+      "height": 769
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1026,10 +1025,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 1937990,
+    "size": 1931407,
     "dimensions": {
-      "width": 918,
-      "height": 1359
+      "width": 1074,
+      "height": 1216
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1055,10 +1054,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/jpeg",
-    "size": 1923405,
+    "size": 236916,
     "dimensions": {
-      "width": 1349,
-      "height": 1305
+      "width": 807,
+      "height": 875
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1084,10 +1083,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "illustration"
     ],
     "mimeType": "image/jpeg",
-    "size": 2005013,
+    "size": 1256092,
     "dimensions": {
-      "width": 1553,
-      "height": 1028
+      "width": 1328,
+      "height": 826
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1111,10 +1110,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 300965,
+    "size": 1314895,
     "dimensions": {
-      "width": 1105,
-      "height": 1188
+      "width": 1197,
+      "height": 790
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1140,10 +1139,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/png",
-    "size": 511143,
+    "size": 2000212,
     "dimensions": {
-      "width": 1027,
-      "height": 1013
+      "width": 840,
+      "height": 1238
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1170,10 +1169,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "sunset"
     ],
     "mimeType": "image/png",
-    "size": 1028231,
+    "size": 336359,
     "dimensions": {
-      "width": 1278,
-      "height": 627
+      "width": 1602,
+      "height": 658
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1198,10 +1197,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/png",
-    "size": 2037210,
+    "size": 2086099,
     "dimensions": {
-      "width": 1212,
-      "height": 735
+      "width": 1502,
+      "height": 1385
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1228,10 +1227,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "sunset"
     ],
     "mimeType": "image/png",
-    "size": 2039796,
+    "size": 2061945,
     "dimensions": {
-      "width": 1043,
-      "height": 1067
+      "width": 1138,
+      "height": 899
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1255,10 +1254,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/jpeg",
-    "size": 1417930,
+    "size": 545706,
     "dimensions": {
-      "width": 1388,
-      "height": 890
+      "width": 1236,
+      "height": 1247
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1283,10 +1282,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/png",
-    "size": 227648,
+    "size": 1465436,
     "dimensions": {
-      "width": 1501,
-      "height": 610
+      "width": 1118,
+      "height": 1334
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1310,10 +1309,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 1381699,
+    "size": 2019798,
     "dimensions": {
-      "width": 1682,
-      "height": 1014
+      "width": 1130,
+      "height": 623
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1337,10 +1336,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 471347,
+    "size": 353802,
     "dimensions": {
-      "width": 1077,
-      "height": 1123
+      "width": 1513,
+      "height": 806
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1367,10 +1366,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "landscape"
     ],
     "mimeType": "image/png",
-    "size": 1018319,
+    "size": 1710534,
     "dimensions": {
-      "width": 1383,
-      "height": 1182
+      "width": 1605,
+      "height": 947
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1396,10 +1395,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "forest"
     ],
     "mimeType": "image/png",
-    "size": 552605,
+    "size": 497418,
     "dimensions": {
-      "width": 1039,
-      "height": 790
+      "width": 1528,
+      "height": 896
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1423,10 +1422,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 160511,
+    "size": 1276950,
     "dimensions": {
-      "width": 939,
-      "height": 1078
+      "width": 1465,
+      "height": 1199
     },
     "metadata": {
       "uploadedBy": "system",
@@ -1450,1021 +1449,10 @@ export const importedMediaLibrary: MediaItem[] = [
       "camper"
     ],
     "mimeType": "image/png",
-    "size": 589980,
+    "size": 138882,
     "dimensions": {
-      "width": 1072,
-      "height": 688
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/happy_campers-rv-rentals-team.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-highway-open-road",
-    "url": "/images/media/rv-highway-open-road.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-highway-open-road.png",
-    "name": "Rv Highway Open Road",
-    "fileName": "rv-highway-open-road.png",
-    "altText": "The image shows a motorhome traveling on a winding two-lane road through a seemingly arid landscape....",
-    "description": "The image shows a motorhome traveling on a winding two-lane road through a seemingly arid landscape. The vehicle is a large, modern RV with the word \"OMNI\" visible on the front. It occupies most of the road, emphasizing its size. The surroundings consist of dry, scrubby vegetation extending into the distance, with gentle hills visible on the horizon. The sky is clear, suggesting a sunny, possibly late afternoon setting due to the long shadows on the road. The overall color palette is muted and earthy, with tones of brown and gray.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "motorhome",
-      "rv",
-      "camper",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 1969257,
-    "dimensions": {
-      "width": 882,
-      "height": 869
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-highway-open-road.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "oregon-coast-sunset",
-    "url": "/images/media/oregon-coast-sunset.png",
-    "thumbnailUrl": "/images/media/thumbnails/oregon-coast-sunset.png",
-    "name": "Oregon Coast Sunset",
-    "fileName": "oregon-coast-sunset.png",
-    "altText": "The image captures a serene coastal scene at sunset. In the foreground, there's a rocky shoreline wi...",
-    "description": "The image captures a serene coastal scene at sunset. In the foreground, there's a rocky shoreline with scattered rocks and tidal pools reflecting the sky's colors. A prominent sea stack rises from the left side, silhouetted against the vibrant sunset. Atop the sea stack, a lone tree stands, adding an element of natural beauty. \n\nThe horizon is dominated by a colorful sky, transitioning from deep orange and pink near the horizon to lighter purple and blue tones higher up. The sky is dotted with scattered clouds, which are gently illuminated by the setting sun. The composition offers a harmonious balance between the rugged foreground and the tranquil sky, creating a peaceful and contemplative atmosphere.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "coast",
-      "oregon",
-      "sunset"
-    ],
-    "mimeType": "image/png",
-    "size": 1139313,
-    "dimensions": {
-      "width": 1523,
-      "height": 988
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/oregon-coast-sunset.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "overheadlot",
-    "url": "/images/media/OverheadLot.png",
-    "thumbnailUrl": "/images/media/thumbnails/OverheadLot.png",
-    "name": "OverheadLot",
-    "fileName": "OverheadLot.png",
-    "altText": "The image shows an aerial view of a large dealership lot filled with recreational vehicles (RVs) and...",
-    "description": "The image shows an aerial view of a large dealership lot filled with recreational vehicles (RVs) and motorhomes. There is a prominent American flag in the foreground, elevated on a pole. The lot is organized with several rows of RVs, primarily white with varied designs on their sides. A variety of passenger vehicles, including trucks and cars, are interspersed among the RVs, particularly near a building with a large parking area.\n\nThe main building has a gray roof with a front entrance featuring large glass windows and doors. Some text is visible on the building façade beneath the roof's edge. In the background, there are more industrial buildings and a landscape of trees and rolling hills. The sky above is mostly clear with a few clouds.\n\nOverall, the scene conveys a sense of spaciousness and organization, characteristic of a large-scale RV sales or rental business.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "motorhome",
-      "rv",
-      "camper",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 1778074,
-    "dimensions": {
-      "width": 1508,
-      "height": 1138
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/OverheadLot.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-on-coastal-highway",
-    "url": "/images/media/rv-on-coastal-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-on-coastal-highway.png",
-    "name": "Rv On Coastal Highway",
-    "fileName": "rv-on-coastal-highway.png",
-    "altText": "The image depicts a large, dark-colored motorhome or RV traveling on a winding road. The RV has \"TIF...",
-    "description": "The image depicts a large, dark-colored motorhome or RV traveling on a winding road. The RV has \"TIFFIN\" written on the front above the windshield. It features modern headlights and appears to have its lights on. The road has a double yellow line and is bordered by a metal guardrail. The surrounding landscape consists of rocky terrain and hills, under a pale, early morning or late evening sky, suggesting a serene atmosphere. The composition emphasizes the RV, showcasing it as a central feature in an adventurous setting.",
-    "category": "scenery",
-    "tags": [
-      "motorhome",
-      "rv",
-      "camper",
-      "coast",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 1692702,
-    "dimensions": {
-      "width": 1295,
-      "height": 676
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-on-coastal-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "102a5197-enhanced-nr-scaled",
-    "url": "/images/media/102A5197-Enhanced-NR-scaled.jpg",
-    "thumbnailUrl": "/images/media/thumbnails/102A5197-Enhanced-NR-scaled.jpg",
-    "name": "102A5197 Enhanced NR Scaled",
-    "fileName": "102A5197-Enhanced-NR-scaled.jpg",
-    "altText": "The image shows a group of seven men standing side by side in front of a large RV. They are wearing ...",
-    "description": "The image shows a group of seven men standing side by side in front of a large RV. They are wearing matching black polo shirts with embroidered logos and blue jeans. Most of them have their hands clasped in front or resting at their sides. They appear to be in a showroom or garage setting, as indicated by the polished concrete floor and the reflection of lights on the RV. The RV has a sleek, modern design with a dark color scheme and light stripes. Visible text in the bottom left reads, \"Beaver Coach Sales\" with the tagline \"Service is the Secret\" underneath. The men are smiling, giving a friendly and professional appearance.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "rv",
-      "camper",
-      "logo"
-    ],
-    "mimeType": "image/jpeg",
-    "size": 1622121,
-    "dimensions": {
-      "width": 1073,
-      "height": 1043
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/102A5197-Enhanced-NR-scaled.jpg"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-open-highway",
-    "url": "/images/media/rv-open-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-open-highway.png",
-    "name": "Rv Open Highway",
-    "fileName": "rv-open-highway.png",
-    "altText": "The image depicts a large, white recreational vehicle (RV) with artistic black and gray swirls on it...",
-    "description": "The image depicts a large, white recreational vehicle (RV) with artistic black and gray swirls on its side, driving down a two-lane highway. The RV is branded with \"NEWMAR\" on its rear. It is traveling on a road with clearly marked yellow lines in a rugged, mountainous landscape.\n\nTo the left, the road is bordered by dense trees and bushes. On the right, there are rocky areas and patches of vegetation extending up a hillside. The image is captured in natural light, likely during a sunset, as indicated by the soft, warm glow on the horizon and the clear sky transitioning into dusk. The road stretches far into the distance, disappearing into the landscapes of rolling hills and mountains.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "mountain",
-      "brand",
-      "sunset",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 1419913,
-    "dimensions": {
-      "width": 1637,
-      "height": 1329
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-open-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-maintenance",
-    "url": "/images/media/rv-maintenance.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-maintenance.png",
-    "name": "Rv Maintenance",
-    "fileName": "rv-maintenance.png",
-    "altText": "The image shows a man working inside an RV or vehicle compartment, likely dealing with electrical co...",
-    "description": "The image shows a man working inside an RV or vehicle compartment, likely dealing with electrical components. He is wearing a black shirt and a watch on his left wrist. He appears to be using a multimeter or similar tool, holding its leads in his right hand. His left hand is reaching towards a section with multiple cables, including red and black wires, and jumper cables. The compartment is somewhat dark, with natural light coming from the right side. There are various bottles and containers on a shelf in the background, and part of a vehicle's exterior with striped patterns is visible through a window.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 1813805,
-    "dimensions": {
-      "width": 1180,
-      "height": 844
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-maintenance.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "tetons-landscape",
-    "url": "/images/media/tetons-landscape.png",
-    "thumbnailUrl": "/images/media/thumbnails/tetons-landscape.png",
-    "name": "Tetons Landscape",
-    "fileName": "tetons-landscape.png",
-    "altText": "The image showcases a breathtaking mountain range bathed in the warm glow of the setting or rising s...",
-    "description": "The image showcases a breathtaking mountain range bathed in the warm glow of the setting or rising sun. The snow-covered peaks are illuminated with a soft, pinkish-orange hue reflecting the sunlight. The prominent peaks have rugged and sharp features, adding dramatic contrast against the clear blue sky. The lower parts of the mountains are covered with snow-dusted forests, creating a textured pattern. The overall composition highlights the grandeur and beauty of the natural landscape, emphasizing the serene and majestic atmosphere.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "mountain",
-      "forest",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 305789,
-    "dimensions": {
-      "width": 880,
-      "height": 627
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/tetons-landscape.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "cascade-mountains-highway",
-    "url": "/images/media/cascade-mountains-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/cascade-mountains-highway.png",
-    "name": "Cascade Mountains Highway",
-    "fileName": "cascade-mountains-highway.png",
-    "altText": "The image showcases a picturesque landscape with a long, straight road stretching into the distance....",
-    "description": "The image showcases a picturesque landscape with a long, straight road stretching into the distance. The scene is set in a densely forested area, featuring tall evergreen trees on either side. The road is well-maintained, with clear markings and a parking area visible on the right.\n\nIn the background, a stunning mountain range is partially draped with clouds, while the peaks are illuminated by soft sunlight, possibly during sunrise or sunset, casting a pinkish hue. The sky above is mostly clear with a few scattered clouds, adding to the serene atmosphere.\n\nForests cover most of the landscape, and the composition of the image leads the viewer's eye toward the majestic mountains, creating a sense of depth and tranquility.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "mountain",
-      "forest",
-      "sunset",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 373022,
-    "dimensions": {
-      "width": 1378,
-      "height": 674
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/cascade-mountains-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "friendly-happy-campers-rv-rentals-staff",
-    "url": "/images/media/friendly-happy-campers-rv-rentals-staff.png",
-    "thumbnailUrl": "/images/media/thumbnails/friendly-happy-campers-rv-rentals-staff.png",
-    "name": "Friendly Happy Campers Rv Rentals Staff",
-    "fileName": "friendly-happy-campers-rv-rentals-staff.png",
-    "altText": "The image shows a woman seated at a desk, engaged in a phone call. She is smiling, holding a black t...",
-    "description": "The image shows a woman seated at a desk, engaged in a phone call. She is smiling, holding a black telephone receiver to her ear with her right hand. She has curly hair secured with a clip. The woman is wearing a patterned dress with various colors, including blue and orange. \n\nIn the foreground, a Dell computer monitor is partially visible. A pink straw is noticeable on the desk to her right. In the background, there is a container holding red and black markers or pens, along with some papers and folders. There are glass doors or windows reflecting light, and a sign is barely visible but includes the words “Beaver Coach Sales” at the bottom right, suggesting a business setting. The environment appears professional and organized.",
-    "category": "misc",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 1548621,
-    "dimensions": {
-      "width": 1164,
-      "height": 987
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/friendly-happy-campers-rv-rentals-staff.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "happy-campers-rv-rentals-team",
-    "url": "/images/media/happy_campers-rv-rentals-team.png",
-    "thumbnailUrl": "/images/media/thumbnails/happy_campers-rv-rentals-team.png",
-    "name": "Happy Campers Rv Rentals Team",
-    "fileName": "happy_campers-rv-rentals-team.png",
-    "altText": "The image shows a man speaking into a microphone, possibly addressing a group. He is wearing a dark ...",
-    "description": "The image shows a man speaking into a microphone, possibly addressing a group. He is wearing a dark jacket with a light blue collar and a cap with sunglasses on top. The background features a shiny, dark surface with beige stripes, suggesting a vehicle, possibly a bus or RV. Three other men are visible: two standing on the left, both wearing dark clothing, and one partially visible on the right. The lighting is subdued, creating a casual and intimate atmosphere. A logo with \"BCS\" is faintly visible in the bottom right corner.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "rv",
-      "camper",
-      "logo"
-    ],
-    "mimeType": "image/png",
-    "size": 952418,
-    "dimensions": {
-      "width": 1501,
-      "height": 795
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/happy_campers-rv-rentals-team.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-highway-open-road",
-    "url": "/images/media/rv-highway-open-road.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-highway-open-road.png",
-    "name": "Rv Highway Open Road",
-    "fileName": "rv-highway-open-road.png",
-    "altText": "A Class C RV based on a Ford truck chassis with an overhead cab for sleeping or storage, equipped wi...",
-    "description": "A Class C RV based on a Ford truck chassis with an overhead cab for sleeping or storage, equipped with large side mirrors for better visibility and a roof-mounted air conditioning unit. It drives on a scenic road through a dry landscape.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "class-c",
-      "rv",
-      "camper",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 685645,
-    "dimensions": {
-      "width": 1319,
-      "height": 785
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-highway-open-road.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "oregon-coast-sunset",
-    "url": "/images/media/oregon-coast-sunset.png",
-    "thumbnailUrl": "/images/media/thumbnails/oregon-coast-sunset.png",
-    "name": "Oregon Coast Sunset",
-    "fileName": "oregon-coast-sunset.png",
-    "altText": "The image depicts a serene coastal landscape at sunset. A silhouette of a rock formation with a tree...",
-    "description": "The image depicts a serene coastal landscape at sunset. A silhouette of a rock formation with a tree on top stands prominent against a colorful sky. The foreground shows the water reflecting the pink and orange hues of the sunset, with scattered rocks and ripples.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "coast",
-      "oregon",
-      "sunset",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 568028,
-    "dimensions": {
-      "width": 1130,
-      "height": 1312
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/oregon-coast-sunset.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "overheadlot",
-    "url": "/images/media/OverheadLot.png",
-    "thumbnailUrl": "/images/media/thumbnails/OverheadLot.png",
-    "name": "OverheadLot",
-    "fileName": "OverheadLot.png",
-    "altText": "A dealership or storage facility with numerous RVs parked in rows. The RVs appear to be of different...",
-    "description": "A dealership or storage facility with numerous RVs parked in rows. The RVs appear to be of different sizes and models, including large Class A motorhomes and possibly smaller Class C RVs. The location features an American flag prominently displayed in the foreground, with a main building and surrounding mountainous landscape in the background.",
-    "category": "scenery",
-    "tags": [
-      "class-a",
-      "class-c",
-      "motorhome",
-      "rv",
-      "camper",
-      "mountain",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 883114,
-    "dimensions": {
-      "width": 905,
-      "height": 875
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/OverheadLot.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-on-coastal-highway",
-    "url": "/images/media/rv-on-coastal-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-on-coastal-highway.png",
-    "name": "Rv On Coastal Highway",
-    "fileName": "rv-on-coastal-highway.png",
-    "altText": "This is a Tiffin Class A motorhome. It features a large panoramic windshield for optimal visibility....",
-    "description": "This is a Tiffin Class A motorhome. It features a large panoramic windshield for optimal visibility. The RV is equipped with advanced side mirrors, possibly integrating cameras for improved driver awareness. It has modern LED headlights and multiple rooftop clearance lights, enhancing safety and visibility.",
-    "category": "scenery",
-    "tags": [
-      "class-a",
-      "motorhome",
-      "rv",
-      "camper",
-      "coast"
-    ],
-    "mimeType": "image/png",
-    "size": 775896,
-    "dimensions": {
-      "width": 1544,
-      "height": 1219
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-on-coastal-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "102a5197-enhanced-nr-scaled",
-    "url": "/images/media/102A5197-Enhanced-NR-scaled.jpg",
-    "thumbnailUrl": "/images/media/thumbnails/102A5197-Enhanced-NR-scaled.jpg",
-    "name": "102A5197 Enhanced NR Scaled",
-    "fileName": "102A5197-Enhanced-NR-scaled.jpg",
-    "altText": "The RV is a luxurious Class A Newmar King Aire, featuring a sleek, high-end design with large window...",
-    "description": "The RV is a luxurious Class A Newmar King Aire, featuring a sleek, high-end design with large windows and elegant exterior paint. It includes a slide-out compartment for added space.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "class-a",
-      "rv",
-      "camper",
-      "slide-out"
-    ],
-    "mimeType": "image/jpeg",
-    "size": 2086479,
-    "dimensions": {
-      "width": 1758,
-      "height": 1349
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/102A5197-Enhanced-NR-scaled.jpg"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-open-highway",
-    "url": "/images/media/rv-open-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-open-highway.png",
-    "name": "Rv Open Highway",
-    "fileName": "rv-open-highway.png",
-    "altText": "The RV is a Class A motorhome by Newmar, featuring a sleek and modern design with intricate exterior...",
-    "description": "The RV is a Class A motorhome by Newmar, featuring a sleek and modern design with intricate exterior graphics. It has multiple slide-outs for expanded interior space and a large rear window, allowing ample natural light to enter. The RV is cruising on a scenic road surrounded by natural landscape.",
-    "category": "rvs/interiors",
-    "tags": [
-      "class-a",
-      "motorhome",
-      "rv",
-      "camper",
-      "slide-out",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 627890,
-    "dimensions": {
-      "width": 1408,
-      "height": 872
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-open-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "cleaning-newmar-rv",
-    "url": "/images/media/cleaning-newmar-rv.png",
-    "thumbnailUrl": "/images/media/thumbnails/cleaning-newmar-rv.png",
-    "name": "Cleaning Newmar Rv",
-    "fileName": "cleaning-newmar-rv.png",
-    "altText": "The image shows a Newmar London Aire Class A motorhome. It features a high roof with multiple air co...",
-    "description": "The image shows a Newmar London Aire Class A motorhome. It features a high roof with multiple air conditioning units and a striking exterior design with red, gray, and black accents. The motorhome is being washed, highlighting its large and luxurious build suitable for long-distance travel.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "class-a",
-      "motorhome",
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 1031877,
-    "dimensions": {
-      "width": 1156,
-      "height": 676
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/cleaning-newmar-rv.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-maintenance",
-    "url": "/images/media/rv-maintenance.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-maintenance.png",
-    "name": "Rv Maintenance",
-    "fileName": "rv-maintenance.png",
-    "altText": "The image depicts a person working in the battery compartment of an RV, handling wires and component...",
-    "description": "The image depicts a person working in the battery compartment of an RV, handling wires and components related to power management.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 383681,
-    "dimensions": {
-      "width": 952,
-      "height": 959
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-maintenance.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "tetons-landscape",
-    "url": "/images/media/tetons-landscape.png",
-    "thumbnailUrl": "/images/media/thumbnails/tetons-landscape.png",
-    "name": "Tetons Landscape",
-    "fileName": "tetons-landscape.png",
-    "altText": "This image shows a scenic view of snow-covered mountains during sunset. The sky is clear and blue, w...",
-    "description": "This image shows a scenic view of snow-covered mountains during sunset. The sky is clear and blue, with the sunlight casting a warm glow on the peaks.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "mountain",
-      "sunset",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 1579830,
-    "dimensions": {
-      "width": 893,
-      "height": 929
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/tetons-landscape.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "cascade-mountains-highway",
-    "url": "/images/media/cascade-mountains-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/cascade-mountains-highway.png",
-    "name": "Cascade Mountains Highway",
-    "fileName": "cascade-mountains-highway.png",
-    "altText": "This image features a long, straight road cutting through a forested landscape with mountains in the...",
-    "description": "This image features a long, straight road cutting through a forested landscape with mountains in the background. The road is surrounded by dense trees and the mountains have snow-capped peaks partly covered by clouds. The view conveys a sense of tranquility and vastness in nature.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "mountain",
-      "forest",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 481063,
-    "dimensions": {
-      "width": 1586,
-      "height": 623
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/cascade-mountains-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "friendly-happy-campers-rv-rentals-staff",
-    "url": "/images/media/friendly-happy-campers-rv-rentals-staff.png",
-    "thumbnailUrl": "/images/media/thumbnails/friendly-happy-campers-rv-rentals-staff.png",
-    "name": "Friendly Happy Campers Rv Rentals Staff",
-    "fileName": "friendly-happy-campers-rv-rentals-staff.png",
-    "altText": "The image shows a person at a desk speaking on the phone. There is a computer monitor in the foregro...",
-    "description": "The image shows a person at a desk speaking on the phone. There is a computer monitor in the foreground and a pen holder with various pens. The person has a patterned top and visible tattoos on their arm. The setting appears to be an office with a window in the background.",
-    "category": "misc",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 174012,
-    "dimensions": {
-      "width": 1556,
-      "height": 1220
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/friendly-happy-campers-rv-rentals-staff.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "happy-campers-rv-rentals-team",
-    "url": "/images/media/happy_campers-rv-rentals-team.png",
-    "thumbnailUrl": "/images/media/thumbnails/happy_campers-rv-rentals-team.png",
-    "name": "Happy Campers Rv Rentals Team",
-    "fileName": "happy_campers-rv-rentals-team.png",
-    "altText": "The RV is a Class A vehicle with a sleek, dark-colored exterior featuring diagonal stripe accents. I...",
-    "description": "The RV is a Class A vehicle with a sleek, dark-colored exterior featuring diagonal stripe accents. It has a high gloss finish and is equipped with large side mirrors.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "class-a",
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 351539,
-    "dimensions": {
-      "width": 983,
-      "height": 1103
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/happy_campers-rv-rentals-team.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-highway-open-road",
-    "url": "/images/media/rv-highway-open-road.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-highway-open-road.png",
-    "name": "Rv Highway Open Road",
-    "fileName": "rv-highway-open-road.png",
-    "altText": "The image shows a large RV with 'OMNI' written on it driving on a two-lane road. The surroundings ar...",
-    "description": "The image shows a large RV with 'OMNI' written on it driving on a two-lane road. The surroundings are open with dry vegetation and distant hills.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 2047502,
-    "dimensions": {
-      "width": 1230,
-      "height": 867
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-highway-open-road.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "oregon-coast-sunset",
-    "url": "/images/media/oregon-coast-sunset.png",
-    "thumbnailUrl": "/images/media/thumbnails/oregon-coast-sunset.png",
-    "name": "Oregon Coast Sunset",
-    "fileName": "oregon-coast-sunset.png",
-    "altText": "A scenic view of a rocky coastline during sunset. The silhouette of a large rock formation with a tr...",
-    "description": "A scenic view of a rocky coastline during sunset. The silhouette of a large rock formation with a tree on top is in the foreground, with a colorful sky and clouds in the background. The tide is low, revealing rocks and sand in the foreground.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "coast",
-      "oregon",
-      "sunset"
-    ],
-    "mimeType": "image/png",
-    "size": 1869684,
-    "dimensions": {
-      "width": 1022,
-      "height": 808
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/oregon-coast-sunset.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "overheadlot",
-    "url": "/images/media/OverheadLot.png",
-    "thumbnailUrl": "/images/media/thumbnails/OverheadLot.png",
-    "name": "OverheadLot",
-    "fileName": "OverheadLot.png",
-    "altText": "The scene shows a large outdoor area with many RVs and vehicles parked neatly in rows. There are bui...",
-    "description": "The scene shows a large outdoor area with many RVs and vehicles parked neatly in rows. There are buildings in the background, and an American flag is visible, suggesting a commercial or dealership setting.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 1487502,
-    "dimensions": {
-      "width": 885,
-      "height": 1323
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/OverheadLot.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-on-coastal-highway",
-    "url": "/images/media/rv-on-coastal-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-on-coastal-highway.png",
-    "name": "Rv On Coastal Highway",
-    "fileName": "rv-on-coastal-highway.png",
-    "altText": "The image shows a bus driving on a mountainous road at dusk with a guard rail on the side. The sky i...",
-    "description": "The image shows a bus driving on a mountainous road at dusk with a guard rail on the side. The sky is clear and there are rocky hills in the background.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "coast",
-      "mountain"
-    ],
-    "mimeType": "image/png",
-    "size": 1015561,
-    "dimensions": {
-      "width": 1018,
-      "height": 1371
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-on-coastal-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "102a5197-enhanced-nr-scaled",
-    "url": "/images/media/102A5197-Enhanced-NR-scaled.jpg",
-    "thumbnailUrl": "/images/media/thumbnails/102A5197-Enhanced-NR-scaled.jpg",
-    "name": "102A5197 Enhanced NR Scaled",
-    "fileName": "102A5197-Enhanced-NR-scaled.jpg",
-    "altText": "Seven individuals are standing in front of a large vehicle, possibly a motorhome or RV, in an indoor...",
-    "description": "Seven individuals are standing in front of a large vehicle, possibly a motorhome or RV, in an indoor setting. They are dressed in similar attire, wearing black polo shirts and jeans, suggesting a team or group affiliation. The background shows part of the vehicle's exterior, indicating a showroom or dealership environment.",
-    "category": "team",
-    "tags": [
-      "motorhome",
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/jpeg",
-    "size": 596766,
-    "dimensions": {
-      "width": 1500,
-      "height": 831
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/102A5197-Enhanced-NR-scaled.jpg"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-open-highway",
-    "url": "/images/media/rv-open-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-open-highway.png",
-    "name": "Rv Open Highway",
-    "fileName": "rv-open-highway.png",
-    "altText": "A motorhome is driving along a highway in a rural area with hills and trees in the background. The r...",
-    "description": "A motorhome is driving along a highway in a rural area with hills and trees in the background. The road is surrounded by natural landscape with shrubs and small trees.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "motorhome",
-      "rv",
-      "camper",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 790645,
-    "dimensions": {
-      "width": 813,
-      "height": 954
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-open-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "cleaning-newmar-rv",
-    "url": "/images/media/cleaning-newmar-rv.png",
-    "thumbnailUrl": "/images/media/thumbnails/cleaning-newmar-rv.png",
-    "name": "Cleaning Newmar Rv",
-    "fileName": "cleaning-newmar-rv.png",
-    "altText": "The scene depicts a person washing a large motorhome using a long-handled brush. The vehicle is park...",
-    "description": "The scene depicts a person washing a large motorhome using a long-handled brush. The vehicle is parked outside near a building with a metal roof. There are cleaning supplies and equipment visible, indicating a vehicle washing area.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "motorhome",
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 482240,
-    "dimensions": {
-      "width": 921,
-      "height": 1391
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/cleaning-newmar-rv.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "rv-maintenance",
-    "url": "/images/media/rv-maintenance.png",
-    "thumbnailUrl": "/images/media/thumbnails/rv-maintenance.png",
-    "name": "Rv Maintenance",
-    "fileName": "rv-maintenance.png",
-    "altText": "A person is working on an electrical system, possibly a battery, using various tools and cables. The...",
-    "description": "A person is working on an electrical system, possibly a battery, using various tools and cables. The setting appears to be inside a large vehicle or a workshop area, with equipment and components visible around the workspace.",
-    "category": "misc",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 1925979,
-    "dimensions": {
-      "width": 1344,
-      "height": 663
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/rv-maintenance.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "tetons-landscape",
-    "url": "/images/media/tetons-landscape.png",
-    "thumbnailUrl": "/images/media/thumbnails/tetons-landscape.png",
-    "name": "Tetons Landscape",
-    "fileName": "tetons-landscape.png",
-    "altText": "The image shows a mountain range with peaks covered in snow, bathed in the warm light of sunrise or ...",
-    "description": "The image shows a mountain range with peaks covered in snow, bathed in the warm light of sunrise or sunset. The sky is clear and blue, highlighting the contrast with the snowy mountains.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "mountain",
-      "sunset",
-      "landscape"
-    ],
-    "mimeType": "image/png",
-    "size": 333716,
-    "dimensions": {
-      "width": 1253,
-      "height": 928
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/tetons-landscape.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "cascade-mountains-highway",
-    "url": "/images/media/cascade-mountains-highway.png",
-    "thumbnailUrl": "/images/media/thumbnails/cascade-mountains-highway.png",
-    "name": "Cascade Mountains Highway",
-    "fileName": "cascade-mountains-highway.png",
-    "altText": "Aerial view of a winding road through a forest, with mountains and clouds in the background. The sce...",
-    "description": "Aerial view of a winding road through a forest, with mountains and clouds in the background. The scene is serene and natural, with dense trees and an open road.",
-    "category": "scenery",
-    "tags": [
-      "rv",
-      "camper",
-      "mountain",
-      "forest"
-    ],
-    "mimeType": "image/png",
-    "size": 507267,
-    "dimensions": {
-      "width": 904,
-      "height": 696
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/cascade-mountains-highway.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "friendly-happy-campers-rv-rentals-staff",
-    "url": "/images/media/friendly-happy-campers-rv-rentals-staff.png",
-    "thumbnailUrl": "/images/media/thumbnails/friendly-happy-campers-rv-rentals-staff.png",
-    "name": "Friendly Happy Campers Rv Rentals Staff",
-    "fileName": "friendly-happy-campers-rv-rentals-staff.png",
-    "altText": "A person is sitting at a desk in an office environment, engaged in a phone call. There are office su...",
-    "description": "A person is sitting at a desk in an office environment, engaged in a phone call. There are office supplies and a computer monitor on the desk.",
-    "category": "misc",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 1164334,
-    "dimensions": {
-      "width": 1626,
-      "height": 836
-    },
-    "metadata": {
-      "uploadedBy": "system",
-      "uploadedAt": "2024-01-01T00:00:00.000Z",
-      "source": "wordpress",
-      "originalUrl": "https://www.happycampersrvrentals.com/wp-content/uploads/2025/03/friendly-happy-campers-rv-rentals-staff.png"
-    },
-    "usage": []
-  },
-  {
-    "id": "happy-campers-rv-rentals-team",
-    "url": "/images/media/happy_campers-rv-rentals-team.png",
-    "thumbnailUrl": "/images/media/thumbnails/happy_campers-rv-rentals-team.png",
-    "name": "Happy Campers Rv Rentals Team",
-    "fileName": "happy_campers-rv-rentals-team.png",
-    "altText": "A person is speaking into a microphone while others listen attentively. They are standing near a lar...",
-    "description": "A person is speaking into a microphone while others listen attentively. They are standing near a large vehicle, possibly an RV, suggesting a casual gathering or event.",
-    "category": "rvs/exteriors",
-    "tags": [
-      "rv",
-      "camper"
-    ],
-    "mimeType": "image/png",
-    "size": 1354735,
-    "dimensions": {
-      "width": 1522,
-      "height": 1188
+      "width": 1502,
+      "height": 1210
     },
     "metadata": {
       "uploadedBy": "system",
@@ -2475,3 +1463,14 @@ export const importedMediaLibrary: MediaItem[] = [
     "usage": []
   }
 ];
+
+// Category counts
+export const mediaCategoryCounts = {
+  "brand": 4,
+  "misc": 14,
+  "rvs/exteriors": 13,
+  "lifestyle": 4,
+  "scenery": 12,
+  "rvs/floor-plans": 3,
+  "rvs/interiors": 1
+};
