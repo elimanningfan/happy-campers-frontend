@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -21,20 +21,24 @@ import {
   ArrowLeft, 
   Image as ImageIcon,
   X,
-  Plus
+  Plus,
+  Sparkles
 } from 'lucide-react';
 import { categories, tags, authors } from '@/data/blog-posts';
 import { BlogPost } from '@/types/blog';
 import { MediaPicker } from '@/components/admin/media-picker';
 import { MediaItem } from '@/lib/types/media';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 type PostStatus = 'draft' | 'published' | 'scheduled';
 
 export default function NewBlogPostPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPublishing, setIsPublishing] = useState(false);
   const [isSavingDraft, setIsSavingDraft] = useState(false);
   const [isMediaPickerOpen, setIsMediaPickerOpen] = useState(false);
+  const [showGeneratedAlert, setShowGeneratedAlert] = useState(false);
   
   // Form state
   const [title, setTitle] = useState('');
@@ -150,6 +154,62 @@ export default function NewBlogPostPage() {
     setFeaturedImage(media.url);
   };
 
+  // Handle AI-generated content
+  useEffect(() => {
+    const generatedData = searchParams.get('generated');
+    if (generatedData) {
+      try {
+        const data = JSON.parse(decodeURIComponent(generatedData));
+        
+        // Set the generated content
+        setTitle(data.title || '');
+        setSlug(generateSlug(data.title || ''));
+        setContent(data.content || '');
+        setSeoDescription(data.metaDescription || '');
+        
+        // Set primary keyword
+        if (data.primaryKeyword) {
+          setSeoKeywords([data.primaryKeyword]);
+        }
+        
+        // Set secondary keywords
+        if (data.secondaryKeywords) {
+          const secondaryKws = data.secondaryKeywords.split(',').map((kw: string) => kw.trim()).filter(Boolean);
+          setSeoKeywords(prev => [...prev, ...secondaryKws]);
+        }
+        
+        // Set category
+        if (data.category) {
+          const categoryMap: { [key: string]: string } = {
+            'destination-guides': '1',
+            'rv-selection-guides': '2',
+            'how-to-content': '3',
+            'travel-tips': '4'
+          };
+          const categoryId = categoryMap[data.category];
+          if (categoryId) {
+            setSelectedCategories([categoryId]);
+          }
+        }
+        
+        // Extract excerpt from content (first paragraph)
+        const excerptMatch = data.content.match(/<p>(.*?)<\/p>/);
+        if (excerptMatch) {
+          setExcerpt(excerptMatch[1].replace(/<[^>]*>/g, '').substring(0, 200));
+        }
+        
+        setShowGeneratedAlert(true);
+        
+        // Clear the generated param from URL
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.delete('generated');
+        window.history.replaceState({}, '', newUrl);
+      } catch (error) {
+        console.error('Error parsing generated content:', error);
+      }
+    }
+  }, [searchParams]);
+
   return (
     <div className="space-y-6">
       {/* Page Header */}
@@ -183,6 +243,14 @@ export default function NewBlogPostPage() {
           </Button>
         </div>
       </div>
+
+      {showGeneratedAlert && (
+        <Alert variant="success" className="mb-6">
+          <AlertDescription>
+            AI-generated content has been applied to this post. Review and edit as needed.
+          </AlertDescription>
+        </Alert>
+      )}
 
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Main Content Area */}

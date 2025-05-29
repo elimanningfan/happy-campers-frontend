@@ -29,7 +29,8 @@ import {
   ChevronRight,
   Bell,
   Search,
-  Image
+  Image,
+  Sparkles
 } from 'lucide-react';
 
 const sidebarNavigation = [
@@ -70,6 +71,7 @@ const sidebarNavigation = [
     subItems: [
       { name: 'Dashboard', href: '/admin/blog' },
       { name: 'Posts', href: '/admin/blog/posts' },
+      { name: 'Generate with AI', href: '/admin/blog/generate' },
       { name: 'Categories', href: '/admin/blog/categories' },
       { name: 'Tags', href: '/admin/blog/tags' }
     ]
