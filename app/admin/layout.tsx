@@ -59,8 +59,6 @@ const sidebarNavigation = [
     description: 'Manage RV inventory',
     subItems: [
       { name: 'All RVs', href: '/admin/fleet/rvs' },
-      { name: 'Bookings', href: '/admin/fleet/bookings' },
-      { name: 'Maintenance', href: '/admin/fleet/maintenance' }
     ]
   },
   { 
