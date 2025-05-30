@@ -15,7 +15,10 @@ import {
   Image as ImageIcon,
   Type,
   Layers,
-  FileText
+  FileText,
+  Car,
+  Grid,
+  Megaphone
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -38,6 +41,9 @@ import {
   ContentBlock,
   HeroBlockContent,
   TextBlockContent,
+  RVShowcaseBlockContent,
+  GalleryBlockContent,
+  CTABlockContent,
   BlockType
 } from '@/lib/types/page';
 import { 
@@ -136,6 +142,38 @@ export default function CreatePage() {
           columns: 1,
           alignment: 'left'
         } as TextBlockContent;
+      
+      case 'rv-showcase':
+        return {
+          title: 'Featured RVs',
+          description: 'Check out our amazing RV selection',
+          rvIds: [],
+          layout: 'grid',
+          showPricing: true,
+          showAvailability: true,
+          limit: 3
+        } as RVShowcaseBlockContent;
+      
+      case 'gallery':
+        return {
+          title: 'Image Gallery',
+          images: [],
+          layout: 'grid',
+          columns: 3,
+          spacing: 'medium'
+        } as GalleryBlockContent;
+      
+      case 'cta':
+        return {
+          title: 'Ready to Start Your Adventure?',
+          description: 'Book your perfect RV today and create unforgettable memories',
+          backgroundColor: '#F59E0B',
+          buttons: [{
+            text: 'Book Now',
+            link: '/inquiry',
+            style: 'primary'
+          }]
+        } as CTABlockContent;
       
       default:
         return {};
@@ -334,6 +372,247 @@ export default function CreatePage() {
     );
   };
 
+  const RVShowcaseBlockEditor = ({ block }: { block: ContentBlock }) => {
+    const content = block.content as RVShowcaseBlockContent;
+    
+    return (
+      <div className="space-y-4">
+        <div>
+          <Label htmlFor={`${block.id}-title`}>Title (Optional)</Label>
+          <Input
+            id={`${block.id}-title`}
+            value={content.title || ''}
+            onChange={(e) => updateBlockContent(block.id, { ...content, title: e.target.value })}
+            placeholder="Featured RVs"
+          />
+        </div>
+        
+        <div>
+          <Label htmlFor={`${block.id}-desc`}>Description (Optional)</Label>
+          <Textarea
+            id={`${block.id}-desc`}
+            value={content.description || ''}
+            onChange={(e) => updateBlockContent(block.id, { ...content, description: e.target.value })}
+            placeholder="Check out our amazing RV selection"
+            rows={2}
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor={`${block.id}-layout`}>Layout</Label>
+            <Select
+              value={content.layout}
+              onValueChange={(value) => updateBlockContent(block.id, { ...content, layout: value as any })}
+            >
+              <SelectTrigger id={`${block.id}-layout`}>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="grid">Grid</SelectItem>
+                <SelectItem value="carousel">Carousel</SelectItem>
+                <SelectItem value="featured">Featured</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div>
+            <Label htmlFor={`${block.id}-limit`}>Number of RVs</Label>
+            <Input
+              id={`${block.id}-limit`}
+              type="number"
+              min="1"
+              max="12"
+              value={content.limit || 3}
+              onChange={(e) => updateBlockContent(block.id, { ...content, limit: parseInt(e.target.value) })}
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <div className="flex items-center space-x-2">
+            <Switch
+              id={`${block.id}-pricing`}
+              checked={content.showPricing}
+              onCheckedChange={(checked) => updateBlockContent(block.id, { ...content, showPricing: checked })}
+            />
+            <Label htmlFor={`${block.id}-pricing`}>Show Pricing</Label>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <Switch
+              id={`${block.id}-availability`}
+              checked={content.showAvailability}
+              onCheckedChange={(checked) => updateBlockContent(block.id, { ...content, showAvailability: checked })}
+            />
+            <Label htmlFor={`${block.id}-availability`}>Show Availability</Label>
+          </div>
+        </div>
+
+        <div>
+          <Label>Selected RVs</Label>
+          <p className="text-xs text-muted-foreground mt-1">
+            RV selection coming soon. For now, the block will show the latest RVs.
+          </p>
+        </div>
+      </div>
+    );
+  };
+
+  const GalleryBlockEditor = ({ block }: { block: ContentBlock }) => {
+    const content = block.content as GalleryBlockContent;
+    
+    return (
+      <div className="space-y-4">
+        <div>
+          <Label htmlFor={`${block.id}-title`}>Title (Optional)</Label>
+          <Input
+            id={`${block.id}-title`}
+            value={content.title || ''}
+            onChange={(e) => updateBlockContent(block.id, { ...content, title: e.target.value })}
+            placeholder="Image Gallery"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor={`${block.id}-layout`}>Layout</Label>
+            <Select
+              value={content.layout}
+              onValueChange={(value) => updateBlockContent(block.id, { ...content, layout: value as any })}
+            >
+              <SelectTrigger id={`${block.id}-layout`}>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="grid">Grid</SelectItem>
+                <SelectItem value="masonry">Masonry</SelectItem>
+                <SelectItem value="carousel">Carousel</SelectItem>
+                <SelectItem value="slider">Slider</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div>
+            <Label htmlFor={`${block.id}-columns`}>Columns</Label>
+            <Select
+              value={content.columns.toString()}
+              onValueChange={(value) => updateBlockContent(block.id, { ...content, columns: parseInt(value) as any })}
+            >
+              <SelectTrigger id={`${block.id}-columns`}>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="2">2 Columns</SelectItem>
+                <SelectItem value="3">3 Columns</SelectItem>
+                <SelectItem value="4">4 Columns</SelectItem>
+                <SelectItem value="5">5 Columns</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
+        <div>
+          <Label htmlFor={`${block.id}-spacing`}>Spacing</Label>
+          <Select
+            value={content.spacing || 'medium'}
+            onValueChange={(value) => updateBlockContent(block.id, { ...content, spacing: value as any })}
+          >
+            <SelectTrigger id={`${block.id}-spacing`}>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="none">None</SelectItem>
+              <SelectItem value="small">Small</SelectItem>
+              <SelectItem value="medium">Medium</SelectItem>
+              <SelectItem value="large">Large</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div>
+          <Label>Images</Label>
+          <p className="text-xs text-muted-foreground mt-1">
+            Image selection coming soon. Integration with media library will be added.
+          </p>
+        </div>
+      </div>
+    );
+  };
+
+  const CTABlockEditor = ({ block }: { block: ContentBlock }) => {
+    const content = block.content as CTABlockContent;
+    
+    return (
+      <div className="space-y-4">
+        <div>
+          <Label htmlFor={`${block.id}-title`}>Title</Label>
+          <Input
+            id={`${block.id}-title`}
+            value={content.title}
+            onChange={(e) => updateBlockContent(block.id, { ...content, title: e.target.value })}
+            placeholder="Ready to Start Your Adventure?"
+          />
+        </div>
+        
+        <div>
+          <Label htmlFor={`${block.id}-desc`}>Description (Optional)</Label>
+          <Textarea
+            id={`${block.id}-desc`}
+            value={content.description || ''}
+            onChange={(e) => updateBlockContent(block.id, { ...content, description: e.target.value })}
+            placeholder="Book your perfect RV today"
+            rows={2}
+          />
+        </div>
+
+        <div>
+          <Label htmlFor={`${block.id}-bg-color`}>Background Color</Label>
+          <Input
+            id={`${block.id}-bg-color`}
+            value={content.backgroundColor || ''}
+            onChange={(e) => updateBlockContent(block.id, { ...content, backgroundColor: e.target.value })}
+            placeholder="#F59E0B"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor={`${block.id}-bg-image`}>Background Image URL (Optional)</Label>
+          <Input
+            id={`${block.id}-bg-image`}
+            value={content.backgroundImage || ''}
+            onChange={(e) => updateBlockContent(block.id, { ...content, backgroundImage: e.target.value })}
+            placeholder="https://example.com/image.jpg"
+          />
+        </div>
+
+        <div>
+          <Label>Call-to-Action Button</Label>
+          {content.buttons.length > 0 && (
+            <div className="space-y-2 mt-2">
+              <Input
+                value={content.buttons[0].text}
+                onChange={(e) => updateBlockContent(block.id, { 
+                  ...content, 
+                  buttons: [{ ...content.buttons[0], text: e.target.value }] 
+                })}
+                placeholder="Button Text"
+              />
+              <Input
+                value={content.buttons[0].link}
+                onChange={(e) => updateBlockContent(block.id, { 
+                  ...content, 
+                  buttons: [{ ...content.buttons[0], link: e.target.value }] 
+                })}
+                placeholder="Button Link"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -455,6 +734,30 @@ export default function CreatePage() {
                   <Type className="mr-2 h-4 w-4" />
                   Add Text
                 </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => addContentBlock('rv-showcase')}
+                >
+                  <Car className="mr-2 h-4 w-4" />
+                  Add RV Showcase
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => addContentBlock('gallery')}
+                >
+                  <Grid className="mr-2 h-4 w-4" />
+                  Add Gallery
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => addContentBlock('cta')}
+                >
+                  <Megaphone className="mr-2 h-4 w-4" />
+                  Add CTA
+                </Button>
               </div>
 
               {/* Content Blocks */}
@@ -473,6 +776,9 @@ export default function CreatePage() {
                           <div className="flex items-center gap-2">
                             {block.type === 'hero' && <ImageIcon className="h-4 w-4" />}
                             {block.type === 'text' && <Type className="h-4 w-4" />}
+                            {block.type === 'rv-showcase' && <Car className="h-4 w-4" />}
+                            {block.type === 'gallery' && <Grid className="h-4 w-4" />}
+                            {block.type === 'cta' && <Megaphone className="h-4 w-4" />}
                             <span className="font-medium capitalize">{block.type} Block</span>
                           </div>
                           <div className="flex items-center gap-1">
@@ -508,6 +814,9 @@ export default function CreatePage() {
                       <CardContent>
                         {block.type === 'hero' && <HeroBlockEditor block={block} />}
                         {block.type === 'text' && <TextBlockEditor block={block} />}
+                        {block.type === 'rv-showcase' && <RVShowcaseBlockEditor block={block} />}
+                        {block.type === 'gallery' && <GalleryBlockEditor block={block} />}
+                        {block.type === 'cta' && <CTABlockEditor block={block} />}
                       </CardContent>
                     </Card>
                   ))
