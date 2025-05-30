@@ -149,60 +149,6 @@ export default function RVManagement() {
         </Link>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid gap-4 md:grid-cols-4">
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Total RVs</p>
-                <p className="text-2xl font-bold">{adminRVData.length}</p>
-              </div>
-              <DollarSign className="h-8 w-8 text-muted-foreground" />
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Available</p>
-                <p className="text-2xl font-bold text-green-600">
-                  {adminRVData.filter(rv => rv.status === "available").length}
-                </p>
-              </div>
-              <CheckCircle className="h-8 w-8 text-green-600" />
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Total Revenue</p>
-                <p className="text-2xl font-bold">
-                  ${adminRVData.reduce((sum, rv) => sum + rv.monthlyRevenue, 0).toLocaleString()}
-                </p>
-              </div>
-              <TrendingUp className="h-8 w-8 text-green-600" />
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Avg Bookings</p>
-                <p className="text-2xl font-bold">
-                  {Math.round(adminRVData.reduce((sum, rv) => sum + rv.monthlyBookings, 0) / adminRVData.length)}
-                </p>
-              </div>
-              <Calendar className="h-8 w-8 text-blue-600" />
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
       {/* Filters and Search */}
       <Card>
         <CardContent className="p-6">
