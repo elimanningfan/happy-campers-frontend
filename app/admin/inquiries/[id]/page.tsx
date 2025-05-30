@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -50,8 +50,9 @@ const statusConfig: Record<InquiryStatus, { label: string; color: string; icon: 
   closed: { label: 'Closed', color: 'bg-gray-100 text-gray-800', icon: FileText },
 };
 
-export default function InquiryDetailPage({ params }: { params: { id: string } }) {
+export default function InquiryDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter();
+  const { id } = use(params);
   const [inquiry, setInquiry] = useState<Inquiry | null>(null);
   const [loading, setLoading] = useState(true);
   const [newNote, setNewNote] = useState('');
@@ -59,14 +60,14 @@ export default function InquiryDetailPage({ params }: { params: { id: string } }
   const [replySubject, setReplySubject] = useState('');
 
   useEffect(() => {
-    const data = getInquiryById(params.id);
+    const data = getInquiryById(id);
     if (data) {
       setInquiry(data);
       // Set default reply subject
       setReplySubject(`Re: RV Rental Inquiry - ${data.rvName}`);
     }
     setLoading(false);
-  }, [params.id]);
+  }, [id]);
 
   const handleStatusChange = (newStatus: InquiryStatus) => {
     if (!inquiry) return;
@@ -104,17 +105,17 @@ export default function InquiryDetailPage({ params }: { params: { id: string } }
       inquiryId: inquiry.id,
       authorId: '1',
       authorName: 'Admin',
-      content: `Assigned to ${teamMembers.find(m => m.id === assignedTo)?.name}`,
+      content: assignedTo === 'unassigned' ? 'Unassigned' : `Assigned to ${teamMembers.find(m => m.id === assignedTo)?.name}`,
       type: 'assignment',
       createdAt: new Date().toISOString(),
       metadata: {
-        assignedTo: assignedTo
+        assignedTo: assignedTo === 'unassigned' ? undefined : assignedTo
       }
     };
 
     const updated = {
       ...inquiry,
-      assignedTo,
+      assignedTo: assignedTo === 'unassigned' ? undefined : assignedTo,
       lastUpdated: new Date().toISOString(),
       notes: [...inquiry.notes, assignmentNote]
     };
@@ -498,12 +499,12 @@ export default function InquiryDetailPage({ params }: { params: { id: string } }
               <CardTitle>Assignment</CardTitle>
             </CardHeader>
             <CardContent>
-              <Select value={inquiry.assignedTo || ''} onValueChange={handleAssignmentChange}>
+              <Select value={inquiry.assignedTo || 'unassigned'} onValueChange={handleAssignmentChange}>
                 <SelectTrigger>
                   <SelectValue placeholder="Unassigned" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Unassigned</SelectItem>
+                  <SelectItem value="unassigned">Unassigned</SelectItem>
                   {teamMembers.map((member) => (
                     <SelectItem key={member.id} value={member.id}>
                       {member.name}
