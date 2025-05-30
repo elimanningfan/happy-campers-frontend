@@ -42,6 +42,18 @@ A modern, responsive frontend prototype for Happy Campers RV Rental Platform bui
   - Inquiry management
   - RV fleet management
   - Settings panel
+  - Admin Inquiries List (`/admin/inquiries`):
+    - Table view of all rental inquiries
+    - Status filtering and search functionality  
+    - Quick actions menu (View, Reply, Update Status)
+    - Statistics cards showing inquiry metrics
+  - Admin Inquiry Detail (`/admin/inquiries/[id]`):
+    - Comprehensive inquiry information display
+    - Customer details and history
+    - Communication timeline with email/notes
+    - Status management and team assignment
+    - Quick actions (Convert to Booking, Generate Quote)
+    - Internal notes system
 
 - **Blog Listing Page** (`/blog`):
   - Grid layout with blog post cards
