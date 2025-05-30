@@ -30,7 +30,8 @@ import {
   Bell,
   Search,
   Image,
-  Sparkles
+  Sparkles,
+  Layers
 } from 'lucide-react';
 
 const sidebarNavigation = [
@@ -59,6 +60,17 @@ const sidebarNavigation = [
     description: 'Manage RV inventory',
     subItems: [
       { name: 'All RVs', href: '/admin/fleet/rvs' },
+    ]
+  },
+  { 
+    name: 'Pages', 
+    href: '/admin/pages', 
+    icon: Layers,
+    description: 'Static page management',
+    subItems: [
+      { name: 'All Pages', href: '/admin/pages' },
+      { name: 'Create Page', href: '/admin/pages/new' },
+      { name: 'Templates', href: '/admin/pages/templates' }
     ]
   },
   { 
