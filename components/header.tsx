@@ -5,13 +5,26 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Browse RVs", href: "/rvs" },
-  { name: "Blog", href: "/blog" },
+  { 
+    name: "Blog", 
+    href: "/blog",
+    dropdown: [
+      { name: "All Posts", href: "/blog" },
+      { name: "Happy Campgrounds", href: "/campgrounds" }
+    ]
+  },
   { name: "Get a Quote", href: "/inquiry" },
   { name: "Contact", href: "/contact" },
 ];
@@ -59,18 +72,51 @@ export function Header() {
         
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                "text-sm font-semibold leading-6 transition-colors hover:text-primary",
-                pathname === item.href
-                  ? "text-primary"
-                  : "text-gray-900"
-              )}
-            >
-              {item.name}
-            </Link>
+            item.dropdown ? (
+              <DropdownMenu key={item.name}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={cn(
+                      "flex items-center gap-1 text-sm font-semibold leading-6 transition-colors hover:text-primary",
+                      pathname.startsWith(item.href)
+                        ? "text-primary"
+                        : "text-gray-900"
+                    )}
+                  >
+                    {item.name}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start">
+                  {item.dropdown.map((subItem) => (
+                    <DropdownMenuItem key={subItem.name} asChild>
+                      <Link
+                        href={subItem.href}
+                        className={cn(
+                          "w-full cursor-pointer",
+                          pathname === subItem.href ? "bg-accent" : ""
+                        )}
+                      >
+                        {subItem.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "text-sm font-semibold leading-6 transition-colors hover:text-primary",
+                  pathname === item.href
+                    ? "text-primary"
+                    : "text-gray-900"
+                )}
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </div>
         
@@ -88,19 +134,51 @@ export function Header() {
       <div className={cn("lg:hidden", mobileMenuOpen ? "block" : "hidden")}>
         <div className="space-y-1 px-2 pb-3 pt-2">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                "block rounded-md px-3 py-2 text-base font-medium transition-colors",
-                pathname === item.href
-                  ? "bg-primary text-white"
-                  : "text-gray-900 hover:bg-gray-50"
-              )}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
+            item.dropdown ? (
+              <div key={item.name}>
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "block rounded-md px-3 py-2 text-base font-medium transition-colors",
+                    pathname === item.href
+                      ? "bg-primary text-white"
+                      : "text-gray-900 hover:bg-gray-50"
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+                {item.dropdown.map((subItem) => (
+                  <Link
+                    key={subItem.name}
+                    href={subItem.href}
+                    className={cn(
+                      "block rounded-md px-6 py-2 text-sm font-medium transition-colors",
+                      pathname === subItem.href
+                        ? "bg-primary/80 text-white"
+                        : "text-gray-700 hover:bg-gray-50"
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {subItem.name}
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "block rounded-md px-3 py-2 text-base font-medium transition-colors",
+                  pathname === item.href
+                    ? "bg-primary text-white"
+                    : "text-gray-900 hover:bg-gray-50"
+                )}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            )
           ))}
           <Link
             href="/inquiry"

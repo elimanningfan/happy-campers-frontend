@@ -1,21 +1,43 @@
-"use client";
-
-import { useState } from "react";
-import { useParams } from "next/navigation";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getRVBySlug } from "@/lib/rv-data";
+import { getRVBySlug, rvData } from "@/lib/rv-data";
 import Link from "next/link";
-import Image from "next/image";
-import { Users, Ruler, Fuel, Calendar, Check, ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Users, Ruler, Fuel, Calendar, Check, ArrowLeft } from "lucide-react";
+import { ImageCarousel } from "@/components/rv/image-carousel";
+import type { Metadata } from 'next';
 
-export default function RVDetail() {
-  const params = useParams();
-  const rv = getRVBySlug(params.slug as string);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+// Generate static params for all RV pages at build time
+export async function generateStaticParams() {
+  return rvData.map((rv) => ({
+    slug: rv.slug,
+  }));
+}
+
+// Generate metadata for SEO
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const rv = getRVBySlug(params.slug);
+
+  if (!rv) {
+    return {
+      title: 'RV Not Found | Happy Campers',
+    };
+  }
+
+  return {
+    title: `${rv.name} | Happy Campers RV Rentals`,
+    description: rv.description,
+    openGraph: {
+      title: rv.name,
+      description: rv.description,
+      images: [{ url: rv.images[0] }],
+    },
+  };
+}
+
+export default function RVDetail({ params }: { params: { slug: string } }) {
+  const rv = getRVBySlug(params.slug);
 
   if (!rv) {
     return (
@@ -35,31 +57,23 @@ export default function RVDetail() {
     );
   }
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % rv.images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + rv.images.length) % rv.images.length);
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <div className="flex-1">
         {/* Breadcrumb */}
         <div className="bg-gray-50 py-4">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <nav className="flex items-center gap-2 text-sm">
+            <nav className="flex items-center gap-2 text-sm" aria-label="Breadcrumb">
               <Link href="/" className="text-gray-500 hover:text-gray-700">
                 Home
               </Link>
-              <span className="text-gray-400">/</span>
+              <span className="text-gray-400" aria-hidden="true">/</span>
               <Link href="/rvs" className="text-gray-500 hover:text-gray-700">
                 RVs
               </Link>
-              <span className="text-gray-400">/</span>
+              <span className="text-gray-400" aria-hidden="true">/</span>
               <span className="text-gray-900">{rv.name}</span>
             </nav>
           </div>
@@ -72,60 +86,8 @@ export default function RVDetail() {
           </Link>
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {/* Image Gallery */}
-            <div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
-                <Image
-                  src={rv.images[currentImageIndex] || "/images/placeholder.svg"}
-                  alt={rv.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-                {rv.images.length > 1 && (
-                  <>
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
-                      aria-label="Previous image"
-                    >
-                      <ChevronLeft className="h-5 w-5" />
-                    </button>
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
-                      aria-label="Next image"
-                    >
-                      <ChevronRight className="h-5 w-5" />
-                    </button>
-                  </>
-                )}
-              </div>
-              
-              {/* Image Thumbnails */}
-              {rv.images.length > 1 && (
-                <div className="mt-4 grid grid-cols-4 gap-2">
-                  {rv.images.map((image, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={cn(
-                        "relative aspect-[4/3] overflow-hidden rounded-md",
-                        currentImageIndex === index && "ring-2 ring-primary"
-                      )}
-                    >
-                      <Image
-                        src={image || "/images/placeholder.svg"}
-                        alt={`${rv.name} - Thumbnail ${index + 1}`}
-                        fill
-                        sizes="(max-width: 768px) 25vw, 12.5vw"
-                        className="object-cover"
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            {/* Image Gallery - Now a Client Component */}
+            <ImageCarousel images={rv.images} name={rv.name} />
 
             {/* RV Details */}
             <div>
