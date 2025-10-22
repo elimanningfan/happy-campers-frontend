@@ -39,18 +39,15 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Happy Campers RV Rentals</span>
-            <div className="flex items-center space-x-2">
-              <div className="relative h-12 w-12">
-                <Image
-                  src="/images/HC_Logo.png"
-                  alt="Happy Campers"
-                  fill
-                  sizes="48px"
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <span className="text-xl font-bold text-primary">Happy Campers</span>
+            <div className="relative h-16 w-48">
+              <Image
+                src="/images/HC_Logo.png"
+                alt="Happy Campers"
+                fill
+                sizes="192px"
+                className="object-contain object-left"
+                priority
+              />
             </div>
           </Link>
         </div>

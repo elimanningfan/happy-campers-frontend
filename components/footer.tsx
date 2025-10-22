@@ -9,17 +9,16 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="relative h-10 w-10">
+            <div className="mb-4">
+              <div className="relative h-16 w-48">
                 <Image
                   src="/images/HC_Logo.png"
                   alt="Happy Campers"
                   fill
-                  sizes="40px"
-                  className="object-contain"
+                  sizes="192px"
+                  className="object-contain object-left"
                 />
               </div>
-              <span className="text-xl font-bold">Happy Campers</span>
             </div>
             <p className="text-sm text-gray-400">
               Your adventure starts here! Premium RV rentals in Bend, Oregon. A subsidiary of Beaver Coach Sales & Service.
