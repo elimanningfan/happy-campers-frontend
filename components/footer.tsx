@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <div className="relative h-10 w-10">
                 <Image
-                  src="/images/HC_Logo.svg"
+                  src="/images/HC_Logo.png"
                   alt="Happy Campers"
                   fill
                   sizes="40px"
