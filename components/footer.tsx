@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -22,14 +22,35 @@ export function Footer() {
               <span className="text-xl font-bold">Happy Campers</span>
             </div>
             <p className="text-sm text-gray-400">
-              Your adventure starts here! Premium RV rentals in the Pacific Northwest.
+              Your adventure starts here! Premium RV rentals in Bend, Oregon. A subsidiary of Beaver Coach Sales & Service.
             </p>
             <div className="mt-4 flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://www.facebook.com/happycampersbend"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://www.instagram.com/happycampersbend/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
                 <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCxC8gUU7sDk23GwWZhkzgTQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -95,21 +116,26 @@ export function Footer() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm">
-                  Portland, Oregon<br />
-                  Pacific Northwest
-                </span>
+                <a
+                  href="https://maps.google.com/maps?cid=13469071973827556344"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  62955 Boyd Acres Rd<br />
+                  Bend, OR 97701
+                </a>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
-                <a href="tel:+15551234567" className="text-gray-400 hover:text-white transition-colors">
-                  (555) 123-4567
+                <a href="tel:+15416405045" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  541-640-5045
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-gray-400 mr-2 flex-shrink-0" />
-                <a href="mailto:info@happycampersrv.com" className="text-gray-400 hover:text-white transition-colors">
-                  info@happycampersrv.com
+                <a href="mailto:Kristina@BeaverCoachSales.com" className="text-gray-400 hover:text-white transition-colors text-sm break-all">
+                  Kristina@BeaverCoachSales.com
                 </a>
               </li>
             </ul>

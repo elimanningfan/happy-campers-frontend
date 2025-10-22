@@ -68,8 +68,13 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold">Phone</h3>
-                        <p className="mt-1 text-gray-600">(555) 123-4567</p>
-                        <p className="text-sm text-gray-500">Mon-Sat 9AM-6PM PST</p>
+                        <a href="tel:+15416405045" className="mt-1 text-gray-600 hover:text-primary">
+                          541-640-5045
+                        </a>
+                        <p className="text-sm text-gray-500 mt-1">Mon-Fri 8AM-5PM PST</p>
+                        <p className="text-sm text-red-600 mt-2">After-Hours Emergency:<br />
+                          <a href="tel:+18553885385" className="hover:text-red-700">855-388-5385</a>
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -84,8 +89,10 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold">Email</h3>
-                        <p className="mt-1 text-gray-600">info@happycampersrv.com</p>
-                        <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                        <a href="mailto:Kristina@BeaverCoachSales.com" className="mt-1 text-gray-600 hover:text-primary break-all">
+                          Kristina@BeaverCoachSales.com
+                        </a>
+                        <p className="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
                       </div>
                     </div>
                   </CardContent>
@@ -100,11 +107,18 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold">Location</h3>
-                        <p className="mt-1 text-gray-600">
-                          123 Adventure Lane<br />
-                          Portland, OR 97201
+                        <a
+                          href="https://maps.google.com/maps?cid=13469071973827556344"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 text-gray-600 hover:text-primary"
+                        >
+                          62955 Boyd Acres Rd<br />
+                          Bend, OR 97701
+                        </a>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Subsidiary of Beaver Coach Sales & Service
                         </p>
-                        <p className="text-sm text-gray-500">Near Portland Airport</p>
                       </div>
                     </div>
                   </CardContent>
@@ -120,9 +134,12 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold">Office Hours</h3>
                         <div className="mt-1 space-y-1 text-sm text-gray-600">
-                          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                          <p>Saturday: 9:00 AM - 5:00 PM</p>
-                          <p>Sunday: 10:00 AM - 4:00 PM</p>
+                          <p><strong>Monday - Friday:</strong> 8:00 AM - 5:00 PM</p>
+                          <p><strong>Saturday - Sunday:</strong> Closed</p>
+                        </div>
+                        <div className="mt-3 pt-3 border-t border-gray-200">
+                          <h4 className="text-sm font-semibold text-gray-700">Check-in & Check-out</h4>
+                          <p className="text-sm text-gray-600 mt-1">Pick-up: 11:00 AM - 2:00 PM</p>
                         </div>
                       </div>
                     </div>
